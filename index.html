@@ -1806,6 +1806,11 @@ a:hover {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
+
+
+        document.querySelectorAll('a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+  });
     </script>
     
  
@@ -1816,3 +1821,4 @@ a:hover {
 </body>
 
 </html>
+
