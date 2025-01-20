@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hani Hagras</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-size: 20px;
+    line-height: 1.4;
+    background-color: white;
+    font-family: 'Lobster', sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    padding: 20px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: left;
+    padding: 0 20px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+nav ul li {
+    margin: 0 10px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+    height: 10px; /* Set the height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: red; /* Set the color of the scrollbar thumb */
+    border-radius: 10px; /* Optional: Add rounded corners to the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: darkred; /* Darker color when hovered */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Set the track color */
+    border-radius: 10px; /* Optional: Add rounded corners to the track */
+}
+nav ul li a:hover {
+    color: #ff7e5f;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Section Styling */
+section {
+    min-height: 93.8vh;
+    display: flex;
+    padding: 60px 20px;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    padding-top: 75px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+/* Section Background Gradients */
+
+
+#about {
+    background-image: linear-gradient(to bottom right, #4D4DFF, #333333);
+}
+
+#services {
+    background-image: linear-gradient(to  right, #4C59B2 30%, #66FFFF 100%);
+}
+
+#contact {
+    background-color: #3399FF;
+}
+
+#experience {
+    background-image: linear-gradient(to right, rgb(51, 180, 135) 30%, rgb(51, 255, 255));
+}
+
+#awards {
+    background-image: linear-gradient(to  right,   rgb(51, 101, 255) 50%,rgb(51, 228, 255));
+}
+
+#Honours {
+    background-image: linear-gradient(to  right,  rgb(8, 0, 255),#00c8ff);
+}
+
+#Patents {
+    background-image: linear-gradient(to  right, #4f3fff 10%, #4CFFFA);
+}
+
+#Funding {
+    background-image: linear-gradient(to left, rgb(51, 228, 255) 30%, rgb(51, 101, 255));
+}
+
+#editorship {
+    background-image: linear-gradient(to bottom right, rgb(51, 65, 255) 30%, rgb(51, 156, 255));
+}
+
+#conference {
+    background-image: linear-gradient(to left, rgb(51, 228, 255) 50%, rgb(51, 51, 255));
+}
+
+#speeches {
+    background-image: linear-gradient(to bottom right, #3388ff 10%, #4CFFFF 100%);
+}
+
+#panels-tutorials {
+    background-image: linear-gradient(to  left, rgb(51, 245, 255), rgba(51, 51, 157, 0.922));
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: aqua;
+}
+
+a:hover {
+    text-decoration: solid;
+    color: rgb(20, 225, 225);
+    transition-duration: 500ms;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the navbar by default */
+        width: 100%;
+        flex-wrap: wrap; /* Allow navbar items to wrap into multiple columns */
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 1000;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        width: 33.33%; /* Each item takes up one-third of the width to create 3 columns */
+        margin: 5px 0;
+    }
+
+    .hamburger {
+        display: flex; 
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    section {
+        padding: 40px 20px;
+        min-height: 150vh;
+    }
+
+    h1, p {
+        font-size: 1.2em;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+}
+
+#publications {
+            background-image: linear-gradient(to  left, rgb(0, 225, 255), rgba(85, 0, 255, 0.922));
+            line-height: 1.8;
+            padding-top: 25px;
+
+            
+          height: auto;
+        }
+
+        #publications h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #publications li {
+            margin-bottom: 20px;
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        #publications li::before {
+            content: '•'; /* Adds the bullet point */
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Positions</a></li>
+                <li><a href="#contact">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#Honours">Honours</a></li>
+                <li><a href="#Patents">Patents</a></li>
+                <li><a href="#Funding">Funding</a></li>
+                <li><a href="#editorship">Editorship</a></li>
+                <li><a href="#conference">Conference Chairing</a></li>
+                <li><a href="#speeches">Invited Speeches</a></li>
+                <li><a href="#panels-tutorials">Invited Tutorials </a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#students">Research Students Supervision</a></li>
+             
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" style="font-size: medium; color: black;">
+        <br>
+        <h1 style="color: rgb(7, 7, 7); text-align: center; margin-top: 50px; ">Professor Hani Hagras</h1>
+        <img height="250px" style="margin-top: 11.5px; margin-bottom: 14px;  align-self: center;" src="https://pbs.twimg.com/media/GNn_skmXsAAcHdS?format=jpg&name=4096x4096"
+            alt="">
+        <p style="font-size: 20px;">
+            Welcome to my webpage. I am a Professor of Artificial Intelligence, Director of Impact, Director of the
+            <a href="https://www.essex.ac.uk/centres-and-institutes/computational-intelligence">Computational Intelligence Centre</a>,
+            and Head of the <a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering/research/artificial-intelligence">Artificial Intelligence Research Group</a> at the
+            <a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering">School of Computer Science and Electronic Engineering</a>,
+            University of Essex, UK. I am a Fellow of the Institute of Electrical and Electronics Engineers (IEEE), a
+            Fellow of the Institution of Engineering and Technology (IET), a Principal Fellow of the UK Higher
+            Education Academy (PFHEA), a Fellow of the
+            <a href="https://www.aaia-ai.org/fellows?words=hagras">Asia-Pacific Artificial Intelligence Association (AAIA)</a>
+            and Fellow of the Artificial Intelligence Industry Alliance (AIIA).
+
+            I am Highly Ranked Scholar-Lifetime by
+            <a href="https://scholargps.com/scholars/70864953091368/hani-hagras?e_ref=35357ca913c6a4d02758">ScholarGPS</a>
+            (my scholarly contributions have placed me in the top 0.05% of all scholars worldwide).
+        </p>
+    </section>
+
+    <section id="about" style="font-size: 15px;">
+        <br>
+        <h1 style="margin-bottom: 10px; ">About Me</h1>
+        <p>
+            <p>My main research interests are in Explainable Artificial Intelligence (XAI) and Data Science with applications to Finance, Cyber Physical Systems, Neuroscience, Life Sciences, Uncertainty Management, Intelligent Planning, Intelligent Robotics, and Intelligent Control of Industrial Processes.</p>
+<br><br>
+            <p>I have authored more than <a href="https://scholar.google.co.uk/citations?user=ZZ61SZwAAAAJ&hl=en">500 papers</a> in international journals, conferences, and books. I am among the top 2% of the most-cited scientists in the world <a href="https://elsevier.digitalcommonsdata.com/datasets/btchxktzyw/7">(Scopus, October 2024).</a></p>
+            <br>
+            <a href="#Patents">I hold eleven industrial international granted patents and applications in the fields of Explainable Artificial Intelligence and Cyber Physical Systems.</a>
+            <br>
+            <a href="#Funding">My work has received funding from major research councils and industry.</a>
+            <br>
+            <p>I have acted as Director of Research at the School of Computer Science and Electronic Engineering and led the School's submission to REF 2021, <a href="https://www.essex.ac.uk/news/2022/05/20/computer-science-at-essex-is-sixth-for-research-power">which saw Essex ranked 6th in the UK for Research Power in Computer Science and Informatics.</a></li>
+            <br>
+            <p>My research has won numerous prestigious international awards, including the IEEE Computational Intelligence Society (CIS) awards. <a href="https://cis.ieee.org/awards/past-recipients#TFSOutstandingPaperAward">I received the 2010 Outstanding Paper Award in the IEEE Transactions on Fuzzy Systems and the 2004 Outstanding Paper Award in the same journal.</a> Additionally, I was awarded the <a href="https://www1.essex.ac.uk/news/event.aspx?e_id=7695">2015 and 2017 Global Telecommunications Business awards for joint projects with British Telecom</a>. In 2016, I was elected as a Distinguished Lecturer by the IEEE Computational Intelligence Society. In 2022, I was awarded the Outstanding Associate Editor Commendation from the IEEE Transactions on Fuzzy Systems. My work has also won best paper awards at several leading international conferences, including the 2014 and 2006 IEEE International Conference on Fuzzy Systems, the 2012 UK Workshop on Computational Intelligence, and the 2016 BCS/SGAI International Conference on Artificial Intelligence. I was awarded the <a href="https://cis.ieee.org/awards/past-recipients#OutstandingChapterAward">2011 IEEE CIS Outstanding Chapter Award</a>. In 2021, I received <a href="https://vimeo.com/631827697">the Best Knowledge Transfer Partnership award</a> from the University of Essex. In 2018, I was awarded the <a href="https://vimeo.com/303229891">best Knowledge Transfer Partnership Academic</a> by the University of Essex, and in 2017, I received the best Research Impact award for my work with British Telecom. I served as the Principal Investigator for a project that received the 2011 UK Best Knowledge Transfer Partnership for London and the East Region from the UK Technology Strategy Board and another project awarded the 2009 Lord Stafford Achievement in Innovation Award for East of England. In 2010, I led a research students team to win first place in the RoboCup 2010. In 2007, I was shortlisted by the Times Higher Education Supplement (THES) for the UK Young Researcher of the Year award.</p>
+            <br>
+            <p>I am an Associate Editor for many journals, including IEEE Transactions on Fuzzy Systems, IEEE Transactions on Artificial Intelligence, Knowledge-Based Systems, Cognitive Computations, and others.</p>
+            <br>
+            <p>I have served as the General and Programme Chair of numerous major international conferences. Notably, I was the General Co-Chair of the 2007 IEEE International Conference on Fuzzy Systems and the Programme Chair of the 2021 and 2017 IEEE International Conference on Fuzzy Systems, among other conferences.</p>
+            
+        </p>
+    </section>
+
+    <section id="services" style="text-align: left; vertical-align: top; font-size: 20px;">
+        <br>
+        <h1 style="margin-bottom: 10px;">Positions</h1>
+       
+        
+        <ul>
+            <li>Professor of Artificial Intelligence, School of Computer Science and Electronic Engineering, University of Essex, United Kingdom.</li>
+            <br>
+            <li>Director of Impact, School of Computer Science and Electronic Engineering, University of Essex, United Kingdom</li>
+            <br>
+            <li>Head of the Artificial Intelligence Research Group, School of Computer Science and Electronic Engineering, University of Essex, United Kingdom</li>
+            <br>
+            <li>Director of the Computational Intelligence Centre, University of Essex, United Kingdom.</li>
+        </ul>
+    </section>
+
+    <section id="contact"; style="font-size: 20px;">
+        <br>
+        <h1>Education</h1>
+        <ul style="text-align: left;">
+            <li>July 2000: Ph.D. in Computer Science (Robotics and Autonomous Systems), University of Essex, UK.</li>
+            <br>
+            <li>November 1996: M.Sc. in Electrical Engineering (with specialization in Electronics and Communications Engineering), University of Alexandria, Egypt.</li>
+            <br>
+            <li>June 1994: B.Sc. in Electrical Engineering (with specialization in Electronics and Communications Engineering), University of Alexandria, Egypt.</li>
+        </ul>
+    </section>
+
+    <section id="experience" >
+        <br>
+        <h1 style="margin-bottom: 10px;">Professional Experience</h1>
+        <ul style="font-size: medium; text-align: left;" >
+            <li>July 2021- Present: Director of Impact, School of Computer Science and Electronic Engineering, University of Essex, United Kingdom.</li>
+            <br>
+            <li>May 2007- Present: Director of the <a href="https://www.essex.ac.uk/centres-and-institutes/computational-intelligence">Computational Intelligence Centre</a>, University of Essex, UK.</li>
+            <br>
+            <li>March 2021- Present: <a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering/research/artificial-intelligence">Head of the Artificial Intelligence Research Group</a>, School of Computer Science and Electronic Engineering, University of Essex, United Kingdom</li>
+            <br>
+            <li>July 2017- July 2021: Director of Research, School of Computer Science and Electronic Engineering, University of Essex, UK. I led the School submission to REF 2021, <a href="https://www.timeshighereducation.com/content/ref2021computerscienceinformatics">which did see Essex coming 6th in UK for Research Power in Computer Science and Informatics.</a></li>
+            <br>
+            <li>October 2015- July 2017: Director of Impact, School of Computer Science and Electronic Engineering, University of Essex, United Kingdom</li>
+            <br>
+            <li>October 2009- July 2019: Chief Science Officer, Logicalglue Ltd.</li>
+            <br>
+            <li>June 2006- Present: Professor of Artificial Intelligence, School of Computer Science and Electronic Engineering, University of Essex, UK.</li>
+            <br>
+            <li>June 2005-December 2017: Head of the Intelligent Environments Research Group, University of Essex, United Kingdom.</li>
+            <br>
+            <li>August 2003-June 2006: Senior Lecturer (Associate Professor) in Computer Science, Department of Computer Science, University of Essex, UK</li>
+            <br>
+            <li>January 2001-August 2003: Lecturer (Assistant Professor) in Computer Science, Department of Computer Science, University of Essex, UK.</li>
+            <li>March 2000-January 2001: Lecturer in Computer Science (Assistant Professor), Department of Computer Science, University of Hull, UK.</li>
+            <br>
+            <li>July 1994-October 1997: Senior Electronics and Control Engineer, the Swiss Engineering Company.Research Associate, Scientific Research and Technology Applications Academy.</li>
+            
+        </ul>
+    </section>
+    <section id="awards" style="font-size: medium; " >
+        <h1 style="font-size: 40px;">Awards</h1>
+        <p style="font-size: large; "> <ul style="text-align: left;">
+           
+           
+            <li><a href="https://scholargps.com/scholars/70864953091368/hani-hagras?e_ref=35357ca913c6a4d02758">I am Highly Ranked Scholar by ScholarGPS (my your scholarly contributions have placed me in the top 0.05% of all scholars worldwide) </a> </li>
+            <br>
+            <li>Fellow IEEE (Institute of Electrical and Electronics Engineer) for contributions to Fuzzy Logic Systems.</li>
+                  <br>
+            <li>Fellow IET (The Institution of Engineering and Technology)</li>
+            <br>
+            <li>Principal Fellow of the Higher Education Academy (HEA).</li>
+            <br>
+            <li><a href="https://www.aaia-ai.org/fellows?words=hagras">AAIA (Asia-Pacific Artificial Intelligence Association).</a></li>
+            <br>
+            <li>Among the top 2% of the most-cited scientists in the world  <a href="https://elsevier.digitalcommonsdata.com/datasets/btchxktzyw/7">(Scopus October 2024).</a></li>
+            <br>
+            <li>Awarded by the IEEE Computational Intelligence Society (CIS), the <a href="https://cis.ieee.org/awards/past-recipients#TFSOutstandingPaperAward">2010 Outstanding Paper Award in the IEEE Transactions on Fuzzy Systems.</a> </li>
+            <br>
+            <li>Awarded by the IEEE Computational Intelligence Society (CIS), the <a href="https://cis.ieee.org/awards/past-recipients#TFSOutstandingPaperAward">2004 Outstanding Paper Award in the IEEE Transactions on Fuzzy Systems.</a> </li>
+            <br>
+            <li>Awarded by the IEEE Computational Intelligence Society (CIS) the <a href="https://cis.ieee.org/awards/past-recipients#OutstandingChapterAward"> IEEE CIS Outstanding Chapter Award.</a></li>
+            <br>
+            <li>Awarded in cooperation with British Telecom (BT) the <a href="https://www1.essex.ac.uk/news/event.aspx?e_id=7695"> Global Telecoms Business Innovation Awards</a> under the Business Service Innovation Category. The award is for their joint project AI-R for service delivery which recognises our work in applying AI technologies and novel mixed reality systems for improving the deployment of engineering workforce to deliver service.  </li>
+            <br>
+            <li>Awarded the 2022 Outstanding Associate Editor Commendation from the IEEE Transactions of Fuzzy Systems.</li>
+            <br>
+            <li>Awarded in cooperation with British Telecom (BT) the 2015 Global Telecoms Business Innovation Awards under the Business Service Innovation Category. The award was for the project entitled “Work Area Optimization for Telecoms Engineers” (iPatctch). iPatch helped BT achieve its best public switched telephone network performance due to increasing the amount of work completed by engineers (productivity increase of 7%) by optimising the geographical areas to reduce the amount of time engineers spend travelling (travel was reduced by 3%). Furthermore, the iPatch reduced fuel costs and CO2 emissions significantly (reduction of 2,500 metric tonnes of CO2 annually). The work formed the basis of an <a href="https://results2021.ref.ac.uk/impact/b5e1ee0c-6387-46f3-9f93-00fc5bf5556c?page=1"> case study submitted to Ref 2021.</a></li>
+            <br>
+            <li>In 2016, I was elected as Distinguished Lecturer by the IEEE Computational Intelligence Society. </li>
+            <br>
+            <li>Awarded the Best Paper Award in the 2016 BCS SGAI International Conference on Artificial Intelligence, Cambridge, December 2016.</li>
+            <br>
+            <li>Awarded the Best Paper Award in the 2012 UK Workshop for Computational Intelligence, Edinburgh, UK, September 2012 .</li>
+            <br>
+            <li>Awarded by the Adjudication panel for the Institution of Engineering and Technology (IET) (Formerly known as the Institution of Electrical Engineers (IEE))  Knowledge Network Awards, the Technical & Professional Networks Award for 2006/7.</li>
+            <br>
+            <li>Acted as the Principal Investigator for a project which was Awarded by the Technology Strategy Board, the 2011 UK Best Knowledge Transfer Partnership for London and the East Region.</li>
+            <br>
+            <li>Acted as the Principal Investigator for a project which was Awarded the 2009 Lord Stafford Achievement in Innovation Award for East of England.  </li>
+            <br>
+            <li>Best Student paper Award in the 2014 IEEE International Conference on Fuzzy Systems, Beijing, China, July 2014 within the 2014 IEEE World Congress on Computational Intelligence (WCCI 2014), Beijing, China, July 2014.  Title: A Type-2 Fuzzy Logic Based System for Linguistic Summarization of Video Monitoring in Indoor Intelligent Environments. Authors: Bo Yao, Hani Hagras, Daniyal Alghazzawi, Mohammed J. Alhaddad.</li>
+            <br>
+            <li>Best Student paper Award in the 2006 IEEE International Conference on Fuzzy Systems, Vancouver, Canada, July 2006 within the 2006 IEEE World Congress on Computational Intelligence (WCCI 2006),Vancouver, Canada, July 2006.  Title: Using Uncertainty Bounds in the Design of an Embedded Real-Time Type-2 Neuro-Fuzzy Speed Controller for Marine Diesel Engines. Authors: Christopher Lynch, Hani Hagras, Victor Callaghan. </li>
+            <br>
+            <li>Awarded by the University of Essex, the 2021 <a href="https://vimeo.com/631827697"> Knowledge Transfer Partnership award.</a></li>
+            <br>
+            <li>Awarded by the University of Essex, the 2017 best Research impact award for my work with British Telecom. </li>
+            <br>
+             <li>Awarded by the University of Essex, the 2018 <a href="https://vimeo.com/303229891"> Knowledge Transfer Partnership Academic.</a> </li>
+            <br>
+            <li>Led a Research Students team to win the First place in the RoboCup 2010. </li>
+            <br>
+            <li>In 2007, I was Shortlisted by the Times Higher Education supplement (THES) for the UK Young researcher of the year award.</li>
+            </ul>
+            
+            </p>
+        
+    </section>
+
+
+    <section id="Honours">
+        <h1>Honours</h1>
+      
+        <li> Member of the IEEE Computational Intelligence Society CIS Fellows Sub-Committee (2025)</li>
+        <br>  
+            <li><a href="https://standards.ieee.org/ieee/2976/10522/"> Member of the IEEE Standards Association working group for Explainable AI standard</a></li>
+             <br>
+           
+            
+            <li>Chair of IEEE Computational Intelligence Society (CIS) Senior Members Sub-Committee.  (2009)</li>
+            <br>
+           <li> Chair of the IEEE CIS Conference Bid subcommittee. (2021- 2022)</li>
+            <br>
+           <li> Chair of the IEEE CIS Task Force on Extensions to Type-1 Fuzzy Sets. (2006-2020)</li>
+            <br>
+           <li> Vice Chair of the IEEE CIS Technical Committee on Emergent Technologies (2009-2015).</li>
+            <br>
+           <li> Associate Editor for the Following Journals</li>
+            <br>
+            <li>IEEE Transactions on Fuzzy Systems.</li>
+            <br>
+            <li>IEEE Transactions on Artificial Intelligence.</li>
+            <br>
+            <li>Knowledge Based Systems</li>
+            <br>
+            <li>Cognitive Computation.</li>
+            <br>
+            
+            <li>The International Journal of Robotics and Automation.</li>
+            <br>
+            
+            <li>Soft Computing.</li>
+
+            <br>
+            
+            <li>Journal of Ambient Computing and Intelligence  </li>
+            <br>
+            
+            <li>Journal of Ambient Intelligence and Smart Environments.</li>
+            <br>
+            <li>Invited to develop a tutorial for the IEEE Expert Now Online Tutorials entitled “Type-2 Fuzzy Logic Controllers: Towards a New Approach for Handling Uncertainties in Real World Environments” appeared January 2009.</li>
+            <br>
+            <li>Invited by the IEEE to join the IEEE-United Nations (UN) Humanitarian Technology Challenge project which is a partnership between the IEEE, the United Nations Foundation and the Vodafone Foundation. The project is targeted at developing technological solutions to some of the greatest challenges facing public health and disaster response workers today to help developing nations.</li>
+            <br>
+            <li>Member of the IEEE Computational Intelligence Society Fellows committee (2015)</li>
+            <br>
+            <li>Member of the IEEE Computational Intelligence Society Conference Committee (2021-2022)</li>
+            <br>
+            <li>Member of the IEEE Computational Intelligence Society Conference Strategic Planning Committee (2018- 2020)</li>
+            <br>
+            <li>Chair of the Communications subcommittee in the IEEE Computational Intelligence Society Conference Committee (2014-2017)</li>
+            <br>
+             <li>Chair of the of the Technical Conference Co-sponsorship  sub committee in the IEEE Computational Intelligence Society (2016-2017)</li>
+            <br>
+            <li>Member of the IEEE CIS Fuzzy Systems Technical Committee (FSTC). (2006-Present)</li>
+            <br>
+            <li>Member of the IEEE Industrial Electronics Society (IES) IEEE IES Technical Committee of the Building Automation, Control and Management. (2004-2014)</li>
+            <br>
+            <li>Member of the IEEE CIS Emergent Technologies Technical Committee (ETTC). (2007-2016)</li>
+            <br>
+            <li>Member of the IEEE CIS Senior Members Sub Committee. (2008- 2010)</li>
+            <br>
+            <li>Member of the Executive Committee of the IET Robotics and Mechatronics Professional and Technical Network. (2005-2009)</li>
+            <br>
+           <li> Chair of the IEEE CIS Task Force on Intelligent Agents (2007-2008)</li>
+            <br>
+            <li>Member of the IEEE CIS Chapters Subcommittee. (2008)</li>
+            <br>
+            <li>Member of the validation committee of the Berufsakademie, Germany.</li>
+            
+            
+             
+        
+    </section>
+
+    <section id="Patents">
+        <h1 style="margin-bottom: 20px;">Patents</h1>
+        <p style="font-size: large;">
+     <li>(2022) In cooperation with British Telecom, we have an international patent pending <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2022194674&_cid=P20-L8J5ME-14641-2">entitled "GENERATING THREE-DIMENSIONAL DATA MODELS OF TWO-DIMENSIONAL FLOOR PLANS" number PCT/EP2022/056223.</a> This patent presented a method to generate a three-dimensional (3D) data model of a two-dimensional (2D) floor plan, the floor plan being constituted as a digital image including indications of types of building elements.</li>
+<br>
+<li>(2021) In cooperation with British Telecom, we have an international patent pending <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2021144118&_cid=P20-L8J5ME-14641-2">entitled "Interaction-Based Rendering of Spatial Environments" number PCT/EP2020/087120.</a> This patent presented a method of navigating a digital representation of a spatial environment by a user in which a portion of the digital representation is rendered by a rendering computer system for visualization by the user.</li>
+<br>
+<li>(2020) In cooperation with British Telecom, we have an international patent pending <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2020144026&_cid=P20-L8J5ME-14641-2">entitled "Resilient Network Routing" number PCT/EP2019/085936.</a> This patent presented non-intersecting primary and secondary routes between source and destination nodes in a communications network.</li>
+<br>
+<li>(2020) In cooperation with Temenos, we have an international patent pending <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2020089597&_cid=P20-L8J4KF-04053-2">entitled “An Explainable Artificial Intelligence Mechanism” number PCT/GB2019/053045.</a> The patent presented a method for determining and explaining an artificial intelligence, AI, system employing an opaque model from a local or global point of view.</li>
+<br>
+<li>(2019) Developed with British Telecom—<a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2019001807&_cid=P10-K76JN2-18957-1">type-2 FLS based mixed reality for telecommunications field engineers—which resulted in the international patent PCT/EP2018/061598.</a></li>
+<br><br>
+<li>(2016) Developed Embedded Agents (EAs) that can be embedded in everyday devices, converting them to smart devices, <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2016087921&recNum=10&office=&queryString=FP%3A%28hagras%29&prevFilter=&sortOption=Pub+Date+Desc&maxRec=19">e.g. retrofitting existing cookers using an EA, which converts them into intelligent, autonomous, secure, and energy-efficient cookers; he is co-inventor on Patent Number: PCT/IB2015/002272.</a></li>
+<br>
+<li>(2016) Developed, a new product encompassing 3D vision sensors and type-2 FLS, that performs real-time automatic detection and <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=EP212504911&_cid=P22-KKILNL-78150-3">summarization of important events and human behaviors from large-scale live video data;</a> this work resulted in a PCT patent in which Hagras is a co-inventor. <a href="https://www.eadt.co.uk/news/business/21456919.award-essex-researchers-developed-motion-controlled-camera-can-detect-human-behaviour/">This technology changes the way CCTV is monitored and used, particularly in care-settings and is able to predict when a resident is in need of assistance.</a> This work was awarded the Best Student Paper Award at FUZZ-IEEE 2014, Beijing, China.</li>
+<br>
+<li>(2015) Working with British Telecom (the largest telecommunications company in the world), on the dissemination of type-2 FLSs for workforce management; <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=US197907512&_cid=P12-KL9KQ5-16030-3">this led to a new product called “iPatch”</a>, which was awarded international Patent US - 01.06.2017, in which Hagras is a co-inventor. iPatch increases the capacity to respond to emergency situations and handle more demand each day with a demonstrated 7% productivity uplift along with a reduction of over 1,666 metric tons of CO2 emissions, equivalent to removing over 353 cars off the road per year.</li>
+<br>
+<li>(2009) co-inventor of <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=US73198007&recNum=14&office=&queryString=FP%3A%28hagras%29&prevFilter=&sortOption=Pub+Date+Desc&maxRec=19"> granted patent employing type-2 FLSs for applications in financial applications (Patent Number US20110071969.</a></li>
+<br><br>
+<li>(2007) Worked with Lightwave Technologies develop their  novel<a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2007128783&recNum=17&office=&queryString=FP%3A%28hagras%29&prevFilter=&sortOption=Pub+Date+Desc&maxRec=19"> ICE product for energy optimization of large buildings, that has been implemented in several countries (including UK and Ireland) to maximize occupant comfort and safety while providing a 30% energy savings; he is co-inventor of Patent Number: PCT/EP2007/054323.</a></li>
+<br>
+<li>(1999) A British patent entitled <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=GB137117234&_cid=P20-L8J5ME-14641-2">“Genetic-Fuzzy Real-Time Controller” number “2350695”.</a> The patented mechanism uses a double hierarchy of fuzzy-genetic systems enabling Genetic Algorithms to work in real time and converge to an adequate solution in a very short time. This mechanism had enabled the creation of a fast computing system that can find a control solution in an unstructured changing and dynamic environment.</li>
+<br>
+
+            
+    </section>            
+    
+    <section id="Funding">
+        <h1>Funding</h1>
+      
+
+ <li>(October 2025-October 2028), “Explainable Generative AI for Digital Communications auto scoring”  by Funded by Innovate UK and Bowen Craggs Ltd, (Principal Investigator). Our Essex funding is £320,533.  </li>
+ <br>
+ <li>(May 2025-May 2028), “Hybrid Information Fusion and Generative  AI Approach for Legal Applications” by Funded by Innovate UK and WS Strategic Ltd, (Principal Investigator). Our Essex funding is £280,533.</li>
+<br>
+<li>(May 2020-May 2023), “Explainable AI system for Developing Novel AI techniques to Mobile Network Coverage” Funded by British Telecom, (Principal Investigator). Our funding is £260,000.</li>
+<br>
+<li>(June 2019-June 2022), “Explainable AI systems for high power pumping systems monitoring and predictive maintenance” Funded by Innovate UK and Aquatech Presmain Ltd, (Principal Investigator). Our Essex funding is £243,533</li>
+<br>
+<li>(March 2019-March 2022) “An Explainable Artificial Intelligence System for Realizing Smart Internet of Things Networks ” Funded by Innovate UK and Plextek Ltd, (Principal Investigator). Our Essex funding is £243,533.</li>
+<br>
+<li>May 2019-May 2022) “A Transparent Artificial Intelligence for remote surveying” Funded by Innovate UK and Above Surveying Ltd, (Co- Investigator). Our Essex funding is £243,533.</li>
+<br>
+<li>(October 2018-October 2021) “An Explainable AI paradigm for data Analysis” Funded by Innovate UK and Cognitran Ltd, (Co- Investigator). Our Essex funding is £243,533.</li>
+<br>
+<li>(March 2018-March 2021) “Visual classification & tagging, and delivering this ability into the hands of the domain experts.” Funded by the Technology Strategy Board and Filament Ltd, (Principal Investigator). The Essex funding is £243,533</li>
+<br>
+<li>(October 2018-October 2021) “Strategic Deployment and Utilisation of Assets”, Funded by British Telecom. (Principal Investigator). The Essex funding was £75,000</li>
+<br>
+<li>(October 2018-October 2021) “Exploiting Mixed-Reality Technologies for Network Asset Management” Funded by British Telecom. (Principal Investigator). The Essex funding was £75,000.</li>
+<br>
+<li>(January 2017-January 2020) “Optimised Field Service Delivery: Exploiting computational approaches for field service delivery” Funded by British Telecom. (Principal Investigator). The Essex funding was £90,000</li>
+<br>
+<li>(October 2016-January 2019) “Risk-based simulation for sustainable field operations” Funded by British Telecom. (Principal Investigator). The Essex funding was £90,000.</li>
+<br>
+<li>(August 2015-August 2018) “An Intelligent Augmented Reality Remote Workforce Management System” Funded by the Innovate UK and BT. Funded by Innovate UK and British Telecom, (Principal Investigator). Our total Essex funding is £222,000.</li>
+<br>
+<li>(August 2015-August 2018) “Enhanced Capability in Computer-Vision Based Decision-Making Systems” Funded by the Innovate UK and Selex ES (Principal Investigator). Our total Essex funding is £210,000.</li>
+<br>
+<li>(October 2014- February 2017 )Advanced Resource Planning System for Organisational Design. Funded by British Telecom (Principal Investigator). The Essex funding was £84,250.</li>
+<br>
+<li>(February 2014- February 2015) “JUPITER & NEXT GENERATION FORECASTING MODELS” Funded by British Telecom (Principal Investigator). The Essex funding was £48,807.</li>
+<br>
+<li>(August 2014- December 2015) “Development of a hardware demonstration platform to monitor and detect human behaviours in a residential environment” Funded by Selex ES (Principal Investigator). The Essex funding was £21,375</li>
+<br>
+<li>(October 2013- October 2014) “Type-2 Fuzzy Logic Rule-based optimisation for operational supply planning” Funded by British Telecom. (Principal Investigator). The Essex funding was £48,807.</li>
+<br>
+<li>(February 2013-January 2014) “Rule Base Optimisation for Operational Supply Planning”. Funded by British Telecom. (Principal Investigator). The Essex funding was £31,753.</li>
+<br>
+<li>(October 2011-October 2014) “An Intelligent Type-2 Fuzzy Logic System for Schedule Adherence in BT”. Funded by British Telecom. (Principal Investigator). Our Essex funding was £84,250.</li>
+<br>
+<li>(September 2010- September 2013) “Developing Intelligent Adaptive Systems for Process Control and Production Optimisation in the Oil Refining Industries”.. Funded by the UK Technology Strategy Board and Sanctuary Personnel Ltd. (Principal Investigator). Our total Essex funding is £197,266.</li>
+<br>
+<li>(December 2010-December 2013) “Developing Fuzzy Logic Based Intelligent Data Integration and Visualisation Tools”. Funded by the Technology Strategy Board and Sanctuary Personnel Ltd (Principal Investigator). Our total Essex funding is £211,266.</li>
+<br>
+<li>(October 2010-October 2011) “Distributed and Fuzzy Resource Planning”. Funded by British Telecom. (Principal Investigator). The Essex funding was £20,056.</li>
+<br>
+<li>(April 2011-April 2012) “Optimised Production Fuzzy Planning Model”. Funded by British Telecom (Principal Investigator). The Essex funding was £26,660.</li>
+<br>
+<li>(January 2008-June 2011) "Adaptive and Trusted Ambient Ecologies (ATRACO)”. Funded by the European Commission Seventh Framework Programme (FP7). (Principal Investigator). The total funding for this project is 2 Million Euros in which our funding is about £542,782. The project is in collaboration with the University of Ulm, Germany, LIMSI, France , CTI and InAccess Greece.</li>
+<br>
+<li>(December 2010-December 2015), “Scaling Intelligent Environments” Funded by King Abdulaziz University, (Co-Equal Investigator). Total Funding for Essex is £800,000.</li>
+<br>
+<li>(January 2011-January 2012): “Realising Smart Intelligent virtual class within an intelligent home”. Funded by the Higher Education Funding Council of England (HEFCE) (Main Investigator). The total funding of this project was £110,000.</li>
+<br>
+<li>(December 2010- November 2011) “Type-2 Fuzzy Ontology Model and Its Applications” Funded by Taiwan National Science Council (NSC). Project number NSC 99-2911-I-024-004 under the framework of the NSC Initiative for Research Cooperation among Top UK and Taiwan Universities. Total Funding £60,000. In Cooperation with National University of Tainan, Taiwan.</li>
+<br>
+<li>(September 2010- September 2012): “Evaluation of Fuzzy Control Algorithms in Wind Energy Conversion Systems”. Project number STDF 599 (EGY-08-045). Funded by the International office of the German Federal Ministry of Education and Research (IB-BMBF) and the Egyptian Science and Technology Development Fund (STDF). (Co-Equal Investigator). The total funding of this project was £200,000. The project is in cooperation with Heilbronn University, Germany, Cairo University, Egypt.</li>
+<br>
+<li>(September 2009- September 2010): “Collaborative Distance Education within Intelligent Ambient Environments”. Funded by Hewlett-Packard (HP). (Co-Equal Investigator). The total funding of this project was £80,000.</li>
+<br>
+<li>(August 2009- August 2012) “Type-2 Fuzzy Ontology based Intelligent Agent for Healthcare Application” Project Number: NSC 98-2221-E-024 -009 -MY3. Funded by the Taiwan National Science Council. Total Fund is £54,000 . In Cooperation with National University of Tainan, Taiwan</li>
+<br>
+<li>(April 2006-October 2009) "An Embedded Agent Based System to Create Ambient Intelligent Virtual Care Homes”. Funded by the DTI, ESRC, Sanctuary Social Care. (Principal Investigator). Our total Essex funding is £197,266.</li>
+<br>
+<li>August 2009: British Telecom Short Term Fellowship. Total Fund is £4000.
+<br>
+<li>(January 2008- July 2010) “Ontology Based Intelligent Agent for CMMI Knowledge Management” Project No. NSC 97-2221-E-024-011-MY2. Funded by the Taiwan National Science Council. Total Fund is 320,000NTD. In Cooperation with National University of Tainan, Taiwan and University of Salerno, Italy.</li>
+<br>
+<li>(April 2008-April 2009): “Realising An Intelligent Lecture Hall”. Funded by the German University in Cairo, (Principal Investigator). The total funding of this project was £40,000.</li>
+<br>
+<li>(March 2007-August 2007) “Workshop on the Future of (UK) Fuzzy Systems Research”, Project No EP/E058388/1. Funded by EPSRC, total funding of £ 12,026. (Co-investigator )</li>
+<br>
+<li>(January 2003-May 2006) "Self-Organised Societies of Connectionist Intelligent Agents capable of Learning", Project No IST-2001-38911. Funded by the European Union (EU) Future and Emerging Technology programme. (Principal Investigator) . The total funding of this project is 1.8 million Euros shared between 4 partners; University of Patras Medical school (Greece), CTI (Greece), Tyndall National Institute (Ireland) and ourselves. Our Essex share is £292,863.</li>
+<br>
+<li>(October 2002- October 2006) "An Intelligent Embedded Agent for the speed Control of Marine Diesel Engines" . Funded by MAN B&W Ltd. (Principal Investigator). The total Essex funding is £56,000. MAN is the biggest manufacturer of diesel engines in world and this project aims to develop intelligent agents that can be embedded in huge diesel engines to produce accurate and robust speed controllers for marine diesel engines.</li>
+<br>
+<li>(April 2005- April 2007) “Building an Intelligent Living Space (iSpace)”. Funded by the Higher Education Funding Council of England (HEFCE). (Main Investigator). The total funding of this development was £400,000 where 250,000 were awarded for the equipment of the iSpace from the SRIF-3 initiative and about £ 150,000 were awarded for the building structure from the SRIF-1 initiative.</li>
+<br>
+<li>(January 2001- January 2004) "eGadgets", Project No IST200-25240. Funded by the EU Disappearing Computer programme. (Principal-Investigator). The total funding of this project was 1.2 million Euros shared between 3 partners; CTI (Greece), NMRC (Ireland) and ourselves. Our Essex share was £237,000. The overall aim of the project was to create a computing framework for the design and implementation of future generations of pervasive computing artefacts.</li>
+<br>
+<li>(October 2003- October 2005) “Pervasive Home Environment Networks (PHEN)” . Funded by the DTI New Wave Technologies and Markets Programme. (Co-Investigator). The total funding for this project is £280,000 in which our Essex share is £93,000.</li>
+<br>
+<li>(February 2001- February 2003) "A soft-computing based, multi-agent architecture with applications to intelligent building sensing and control". Funded by the Korea-UK Science and Technology Collaboration Fund. (Principal Investigator). Our total funding for the project was £30,000. This project was done in partnership with the Korean Advanced Institute of Science and Technology (KAIST).</li>
+<br>
+<li>(June 2005- December 2005) ” Support for the IEE International workshop on Intelligent Environments”. Project No EP/C533607/1. Funded by the EPSRC. (Principal Investigator). The total Essex fund is £11,000.</li>
+
+
+
+
+
+
+       </p>
+    </section>
+
+<section id="editorship">
+    <H1>Editorship</H1>
+    <br>
+   <p>
+    <ul style="padding-left: 10px;">
+    <li>IEEE Transactions on Fuzzy Systems</li>
+       <br>
+       <li>IEEE Transaction on Artificial Intelligence</li>
+       <br>
+       <li>Discover AI</li>
+       <br>
+       <li>Knowledge Based Systems</li>
+       <br>
+       <li>The International Journal of Robotics and Automation</li>
+       <br>
+       <li>Soft Computing</li>
+    <br>
+    <li>Journal of Ambient Computing and Intelligence  </li>
+    <br>
+    </ul >
+<li>Cognitive Computation</li>
+<ul style="padding-left: 10px;">
+<br>
+<li>Guest Editor of a Special Issue on “Type-2 Fuzzy Logic Systems” IEEE Computational Intelligence Magazine, December 2012</li>
+<br>
+<li>Guest Editor of a Special Issue on “Advances of Intelligent Environments” Journal of Pervasive and Mobile Computing, December 2009</li>
+<br>
+<li>Guest Editor of a Special Issue on “Intelligence in Real Worlds” Journal of Ubiquitous Computing and Intelligence, July 2006</li>
+<br>
+<li>Guest Editor of a Special Issue on “Intelligent Embedded Agents” in the Journal of Information Sciences, Vol. 171, issue 4, May 2005</li>
+<br>
+<li>Guest Editor of a Special Issue on “Intelligent Learning and Control of Robotics” in the Journal of Information Sciences, Vol. 140, Issue 3-4, May 2002</li>
+<br>
+<li>Guest Editor of a Special Issue on ”Computational Intelligence Techniques for Multi-robotics Systems” in the International Journal of Robotics and Automation, Vol. 19, Number 7, January 2001</li>
+</ul>
+
+
+   </p>
+</section>
+
+<section id="conference">
+
+    <H1>Conference Chairing</H1> 
+<ul style="padding-left: 10px;">
+    <br>
+<li>Tutorial Chair of the 2023 IEEE International Conference on Fuzzy Systems, Icheon, South Korea, August 2023</li>
+<br>
+<li>Programme Chair of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021</li>
+<br>
+<li>Technical Co-Chair of the 2020 IEEE International Conference on Fuzzy Systems held inconjunction with the 2020 IEEE World Congress on Computational Intelligence, Glasgow, UK, July 2020</li>
+<br>
+<li>General Co-Chair of the 2019 International Conference on Intelligent Computing in Data Science, Marrakesh, Morocco, October 2019</li>
+<br>
+<li>Programme Chair of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+<br>
+<li>Co-Chair of the 2018 IEEE International Symposium on Intelligent Agents, Bangalore, India, December 2018</li>
+<br>
+<li>Co-Chair of the 2017 IEEE International Symposium on Intelligent Agents, Hawaii, USA, December 2017</li>
+<br>
+<li>Co-Chair of the 2016 IEEE International Symposium on Intelligent Agents, Santorini, Greece, December 2016</li>
+<br>
+<li>Co-Chair of the 2015 IEEE International Symposium on Intelligent Agents, Cape Town, South Africa, December 2015</li>
+<br>
+<li>Co-Chair of the 2014 IEEE International Symposium on Intelligent Agents, Orlando, USA, December 2014</li>
+<br>
+<li>Co-Chair of the 2013 IEEE International Symposium on Intelligent Agents, Singapore, April 2013</li>
+<br>
+<li>General Co-Chair of the 2007 IEEE International Conference on Fuzzy Systems, July 2007, London, UK </li>
+<br>
+<li>Co-Chair of the 2011 IEEE International Symposium on Advances in Type-2 Fuzzy Logic Systems, Paris, France, April 2011</li>
+<br>
+<li>Co-Chair of the 2011 IEEE International Symposium on Intelligent Agents, Paris, France, April 2011</li>
+<br>
+<li>Programme Chair of the 2012 International Conference on Intelligent Autonomous Systems, Aviero, Portugal, June 2012</li>
+<br>
+<li>Programme Chair of 2010 International Conference on Intelligent System Design and Applications (ISDA 2010), Cairo, Egypt, December 2010</li>
+<br>
+<li>Programme Co-Chair of the 2010 UK Workshop on Computational Intelligence (UKCI 2010), Colchester, UK, September 2010</li>
+<br>
+<li>Special Sessions Chair, 2011 IEEE International Conference on Fuzzy Systems, Taipei, Taiwan, July 2011</li>
+<br>
+<li>Programme Area Chair (Intelligent Agents and Smart Environments), 2011 IEEE International Conference on Fuzzy Systems, Taipei, Taiwan, July 2011</li>
+<br>
+<li>Tutorial Chair, 2016 IEEE International Conference on Fuzzy Systems within the 2016 IEEE World Congress on Computational Intelligence, Vancouver, Canada, July 2016</li>
+<br>
+<li>Tutorial Chair, 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013</li>
+<br>
+<li>Programme Chair of the 2009 IEEE International Symposium on Intelligent Agents, Nashville, USA, April 2009 
+</li>
+<br>
+<li>Programme Area Chair (control) for the 2009 IEEE International Conference on Fuzzy Systems, Jeju Island, Korea, August 2009</li>
+<br>
+<li>Programme Chair of the 2008 International Conference on Intelligent Environments, Seattle, USA, July 2008</li>
+<br>
+<li>Tutorial Chair of the 2016 IEEE World Congress on Computational Intelligence (WCCI 2016), Vancouver, Canada, July 2016</li>
+<br>
+<li>Technical Co-Chair of the 2014 IEEE International Conference on Fuzzy Systems, Beijing, China, July 2014</li>
+<br>
+<li>Poster Chair of 2009 International Conference on Ubiquitous Computing, Ubicomp 2009, Orlando, Florida, October 2009</li>
+<br>
+<li>Co-Chair of the 2013 IEEE International Symposium on Advances in Type-2 Fuzzy Logic Systems, Singapore, April 2013</li>
+<br>
+<li>Co-Chair of the 2013 IEEE International Symposium on Intelligent Agents, Singapore, April 2013</li>
+<br>
+<li>Programme Chair for the 2007 IET International conference on Intelligent Environments, September 2007, Ulm, Germany</li>
+<br>
+<li>Co-Chair of the organising committee for the 2006 International Symposium on Evolving Fuzzy Systems, September 2006, Lake District, UK</li>
+<br>
+<li>Programme Chair for the 2006 IET International conference on Intelligent Environments, July 2006, Athens, Greece</li>
+<br>
+<li>General Chair of the 2005 IEE International workshop on Intelligent Environments, 28-29 June 2005, Colchester, UK</li>
+<br>
+<li>Programme Co-Chair of the IASTED Robotics and Automation Conference, 23-25 August 2004 in Honolulu. Hawaii-USA</li>
+<br>
+<li>Publicity Chair of the 3rd International Conference on Ubiquitous Intelligence and Computing, Wuhan and Three Gorges China, September 2006</li>
+</ul>
+</section>
+
+
+<section id="speeches">
+    <h1>Invited Speeches and Lectures</h1>
+    <ul style="padding-left: 10px;">
+        <li>Plenary Keynote speech in the 2024 Workshop on Explainable Artificial Intelligence for the Medical Domain  –  EXPLIMED, held  within  the 27th European Conference on Artificial, Santiago de Compo Stella , Spain, October 2025.  </li><br>
+       <li> Plenary Keynote speech in the 2024 IEEE International Conference on ICT Solutions for eHealth, Paris, France,  June 2024.</li> <br>
+        <li>Plenary Keynote speech in the 2023 IEEE Symposium Series on Computational Intelligence, Mexico City, Mexico, December 2023</li><br>
+        <li>Invited Keynote speech in the 2023 International Joint Conference on Computational Intelligence, Rome, Italy, November 2023</li><br>
+        <li>Invited Keynote speech in the 2022 UK Computational Intelligence Workshop, Sheffield, UK, September 2022</li><br>
+        <li>Invited Keynote speech in the 2021 IEEE-RIVF International Conference on Computing and Communication Technologies, Hanoi, Vietnam, December 2021</li><br>
+        <li>Invited Keynote speech in the 2020 International Symposium on Computational Intelligence and Cybernetics, Chinese Academy of Science, December 2020</li><br>
+        <li>Invited Keynote speech in the 2020 International Conference on Image Analysis and Recognition, ICIAR 2020, 24-26 June 2020, Portugal</li><br>
+        <li>Invited Keynote speech in the 2019 International Conference on Intelligent Computing in Data Science, Marrakesh, Morocco, October 2019</li><br>
+        <li>Invited Keynote speech in the 2018 International Conference on Intelligent Computing in Data Science, Fez, Morocco, October 2018</li><br>
+        <li>Invited Keynote speech in the Industry 4.0 conference within the 30th Anniversary of the Public University of Navarra, Spain, September 2017</li><br>
+        <li>Plenary keynote speech within the IEEE Computational Intelligence Society Distinguished Lecturer Programme in China (Chinese Academy of Science), September 2017</li><br>
+        <li>Plenary keynote speech within the IEEE Computational Intelligence Society Distinguished Lecturer Programme in Canada (University of Ottawa), April 2018</li><br>
+        <li>Invited Keynote speech in the Eleventh International Workshop on Fuzzy Logic and Applications, Naples, Italy, December 2016</li><br>
+        <li>Invited Keynote speech in the Computational Intelligence Summer School, Tunisia, November 2016</li><br>
+        <li>Invited Keynote Speech in the Intelligent Building Conference, Malta, May 2016</li><br>
+        <li>Invited Speech in the 2014 University of Granada, Spain Experts Seminar Series in Intelligent Systems, Granada, Spain, February 2014</li><br>
+        <li>Invited Speech in the 2013 Brazilian Congress on Computational Intelligence, Recife, Brazil, September 2013</li><br>
+        <li>Invited Keynote Speech in the 2008 IEEE International Conference on Fuzzy Systems within the IEEE World Congress on Computational Intelligence (WCCI 2008), Hong Kong, June 2008</li><br>
+        <li>Invited Plenary Keynote Speech in the 2011 International Work-Conference On Artificial Neural Networks (IWANN 2011), Malaga, Spain, June 2011</li><br>
+        <li>Invited Plenary Keynote Speech in the 2011 International Conference on Adaptive and Intelligent Systems (ICAIS’11), Klagenfurt, Austria, September 2011</li><br>
+        <li>Invited Plenary Keynote Speech in the 9th International Conference on Intelligent Systems Design and Application, Pisa, Italy, December 2009</li><br>
+        <li>Invited Keynote speech in the International Conference on Digital Lifestyles and Systems, Tainan, Taiwan, June 2008</li><br>
+        <li>Invited Keynote speech in the 2008 International Conference on Knowledge Engineering and Uncertainty Handling, Ismailia, Egypt, July 2008</li><br>
+        <li>Invited speech in the Workshop on Emergent Application of Computational Intelligence in Computer Go within the 2010 IEEE World Congress on Computational Intelligence (WCCI 2010), Barcelona, Spain, July 2010</li><br>
+        <li>Invited speech in the 2010 Workshop on Fuzzy Systems and Rough Sets, Cairo, Egypt, April 2010.</li><br>
+        <li>Invited Keynote speech in the 2006 International Symposium on Evolving Fuzzy Systems, Lake District, UK, September 2006</li><br>
+        <li>Invited Keynote speech in the IEE Forum on Autonomous Systems, London, UK, November 2005.</li><br>
+        <li>Invited tutorial for the IEEE Expert Now Online Tutorials entitled “Type-2 Fuzzy Logic Controllers: Towards a New Approach for Handling Uncertainties in Real World Environments,” January 2009</li><br>
+        <li>Invited lectures at the National Centre for High Performance Computing, Taiwan, July 2010.</li><br>
+        <li>Invited lectures at the National University of Tainan, National University of Kaohsiung, and National Cheng Kung University, Taiwan, June 2008</li><br>
+        <li>“ZSlices Based General Type-2 FLSs,” University of Navarra, Spain, December 2011.</li><br>
+        <li>“Type-2 FLCs: Towards a New Generation of Fuzzy Controllers,” Invited Lecture by Bogazici University, Istanbul, Turkey, October 2007</li><br>
+        <li>“Intelligent Embedded Agents to Create Ambient Intelligent Environments,” Mobile and Pervasive Computing Laboratory, University of Florida, USA, April 2007</li><br>
+        <li>“Intelligent Environments and Embedded Agents,” Invited Course at the University of Ulm, Germany, EU Socrates Program, February 2006</li><br>
+        <li>“Using Embedded Agents to Create Ambient Intelligence,” University of Lancaster, UK, November 2005.</li><br>
+        <li>“Towards Developing Embedded Agents Based on Type-2 Fuzzy Logic,” DeMontfort University, Leicester, UK, May 2004</li><br>
+        <li>Invited paper: "Life Long Learning and Adaptation for Embedded Agents Operating in Unstructured Environments," Joint 9th IFSA World Congress and 20th NAFIPS International Conference, Vancouver, Canada, July 25-28, 2001</li><br>
+        <li>“A Hierarchical Fuzzy Genetic System for Online Learning and Adaptation,” BT Labs, BT Adastral Park, Martlesham Heath, UK, January 2000</li><br>
+        <li>“An Intelligent Agricultural Robot,” Czech Technical University, Prague, Czech Republic, February 1999</li><br>
+    </ul>
+    
+</section>
+
+<section id="panels-tutorials">
+    <br>
+    <h1>Panels, Tutorials, and Organised Sessions</h1>
+    <ul style="padding-left: 10px;">
+    <li>Invited Panelist in the panel entitled “Explainable Artificial Intelligence” held within the 2020 World Congress on Computational Intelligence, Glasgow, UK, July 2020.</li>
+    <br>
+    
+    <li>Invited Panelist in the panel entitled “Computing with Words” held within the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+    <br>
+    
+    <li>Gave a tutorial entitled “Theoretical, Practical and Application Aspects of Type-2 Fuzzy Logic Systems”, 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012.</li>
+    <br>
+    
+    <li>Gave a tutorial entitled “Practical and Application Aspects of Type-2 Fuzzy Logic Systems”, 2011 IEEE International Conference on Fuzzy Systems, Taipei, Taiwan, June 2011.</li>
+    <br>
+    
+    <li>Gave a tutorial entitled “Theoretical and Practical Aspects of Type-2 Fuzzy Systems”, 2010 IEEE International Conference on Fuzzy Systems, Barcelona, Spain, July 2010.</li>
+    <br>
+    
+    <li>Invited to develop a tutorial for the IEEE Expert Now Online Tutorials entitled “Type-2 Fuzzy Logic Controllers: Towards a New Approach for Handling Uncertainties in Real World Environments” appeared January 2009.</li>
+    <br>
+    
+    <li>Gave a tutorial entitled “Theoretical and Practical Aspects of Type-2 Fuzzy Systems”, 2009 IEEE International Conference on Fuzzy Systems, Jeju Island, Korea, August 2009.</li>
+    <br>
+    
+    <li>Invited Panelist in the panel entitled “Computing with Words” held in the 2011 IEEE International Conference on Fuzzy Systems, Taipei, Taiwan, June 2011.</li>
+    <br>
+    
+    <li>Invited Panelist in the panel entitled “Human Vs Computer Go Competition” held in the 2009 IEEE International Conference on Fuzzy Systems, Jeju Island, Korea, August 2009.</li>
+    <br>
+    
+    <li>Panelist on the Doctoral Colloquium of the 2009 International Conference on Ubiquitous Computing, Orlando, USA, September 2009.</li>
+    <br>
+    
+    <li>Invited Panelist in the panel entitled “Type-2 Fuzzy Systems: Past, Present, Challenges and Future Directions” held in the 2008 IEEE International Conference on Fuzzy Systems, held within the 2008 World Congress on Computational Intelligence, Hong Kong, June 2008.</li>
+    <br>
+    
+    <li>Organised a panel entitled “Fuzzy Logic Control: Challenges and New Directions”, organized within the 2007 IEEE International Conference of Fuzzy Systems, London, UK, July 2007.</li>
+    <br>
+    
+    <li>Organised and Chaired a Panel on “Intelligent Agents and Computational Intelligence” in the 2009 IEEE International Symposium on Intelligent Agents, Nashville, USA, April 2009.</li>
+    <br>
+    
+    <li>Organising and chairing special sessions on “Intelligent Agents” in the 2008 IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2008, Hong Kong, June 2008.</li>
+    <br>
+    
+    <li>Organising and chairing special sessions on “Advances in Type-2 Fuzzy Systems” in the 2008 IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2008, Hong Kong, June 2008.</li>
+    <br>
+    
+    <li>Organised and chaired two special sessions on “Theory and Applications of type-2 Fuzzy Logic” in the 2006 IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2006, Vancouver, Canada, July 2006.</li>
+    <br>
+    
+    <li>Organised and chaired two special sessions on “Theory and Applications of type-2 Fuzzy Logic” in the 2005 IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2005, Reno, USA, May 2005.</li>
+    <br>
+    
+    <li>Organised and chaired two special sessions on “Applications of type-2 Fuzzy Logic” in the 2004 IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2004, Budapest, Hungary, July 2004.</li>
+    <br>
+    
+    <li>Organised and chaired a special session on “Co-operating Robotic Agents” in the 32nd International Symposium on Robotics and Automation, Seoul, Korea, 18-22 April 2001.</li>
+    <br>
+    
+    <li>Founding member and representative of the University of Essex in the European Robotics Research Network (EURON).</li>
+    <br>
+    
+    <li>I have founded the series of the International conferences on Intelligent Environments (where I served as chair of the steering committee of these conferences), which provided the first forum for researchers from different disciplines to exchange ideas in the field. This helped break boundaries between disciplines, strongly advancing the area.</li>
+    <br>
+    </ul>
+</section>
+
+
+
+<section id="publications" style="  line-height: 250%; font-size: medium; padding-top: 75px;" >
+    
+
+    <h1>Publications</h1>
+    
+    <h3>My full list of publications can be accessed <em><a href="https://scholar.google.co.uk/citations?hl=en&user=ZZ61SZwAAAAJ&view_op=list_works&sortby=pubdate">here</a></em></h3>
+   <h1>Journal Papers</h1>
+    <ul style="padding-left: 10px;">
+        <li>Y Ghozzi, TM Hamdani, H Hagras, K Ouahada, H Chabchoub, AM Alimi, "A deep learning based interval type-2 fuzzy approach for image retrieval systems", Neurocomputing,  Vol. 603, No.28,  October 2024</li>
+        <li>M  Jamalifard,  J  Andreu-Perez,  H  Hagras,  L  Mart,  "Fuzzy  Norm-Explicit  Product Quantization for Recommender Systems", IEEE Transactions on Fuzzy Systems, Vol. 32, No.5, pp.2987-2998, May 2024.</li>
+       <li> K. Maqsood, H Hagras, NR Zabet, "An overview of artificial intelligence in the field of genomics", Discover Artificial Intelligence, Vol. 4, No.1, January 2024. </li>
+        <li>M Almaraash, M Abdulrahim, H Hagras, "A Life-Long Learning XAI Metaheuristic-based Type-2 Fuzzy System for Solar Radiation Modelling",  IEEE Transactions on Fuzzy Systems, Vol.32, No.4, pp. 2102-2115, April 2024. </li>
+        <li>J Fumanal-Idocin, J Andreu-Perez, O Cord, H Hagras, H Bustince, "Artxai: Explainable artificial intelligence curates deep representation learning for artistic images using fuzzy techniques",  IEEE  Transactions  on  Fuzzy  Systems,  Vol.32,  No.4,  pp.1915-1926, November 2023. </li>
+        <li>S. Upasane, H. Hagras, M. Anisi, S. Savill, I. Taylor, K. Manousakis, "A Type-2 Fuzzy Based Explainable AI System for Predictive Maintenance within the Water Pumping Industry", IEEE Transactions on Artificial Intelligence, Vol.5, No.2, pp. 490-504, May 2023.</li>
+
+
+
+
+<li>L. Veryard, H. Hagras, A. Conway, G. Owusu, "A Heated Stack based Type-2 Fuzzy Multi-Objective Optimisation System for Telecommunications Capacity Planning", Knowledge Based Systems, Vol. 260, pp.110-113, January 2023.</li>
+
+<li>M. Kiani, J. Andreu-Perez, H. Hagras, "A Temporal Type-2 Fuzzy System forTime-dependent Explainable Artificial Intelligence", IEEE Transactions on Artificial Intelligence, pp.1-15, September 2022.</li>
+
+<li>H. Leon-Garza, H. Hagras, A. Peña -Rios, A. Conway, G. Owusu, "Type-2 Fuzzy System-based Approach for Image Data Fusion to Create Building Information Models" Information Fusion, Vol.88, pp.115-125, December 2022.</li>
+
+<li>M Kiani, J Andreu-Perez, H Hagras, S Rigato, ML Filippetti. "Towards Understanding Human Functional Brain Development With Explainable Artificial Intelligence: Challenges and Perspectives", IEEE Computational Intelligence Magazine, Vol. 17, No. 1, pp. 16-33, January 2022.</li>
+
+<li>J. Wolfe, L. Mikheeva, H. Hagras, N. Zabet, “An explainable artificial intelligence approach for decoding the enhancer histone modifications code and identification of novel enhancers in Drosophila”, Genome Biology, Vol. 22, No.1, pp.1-23, December 2021.</li>
+
+<li>J. Andreu-Perez, L. Emberson, M. Kiani, M. Filippetti, H. Hagras, S. Rigato, “Explainable artificial intelligence based analysis for interpreting infant fNIRS data in developmental cognitive neuroscience”, Communications Biology, Vol. 4, No. 1, pp. 1-13, September 2021.</li>
+
+<li>DS Mai, LT Ngo, H Hagras, "A hybrid interval type-2 semi-supervised possibilistic fuzzy c-means clustering and particle swarm optimization for satellite image analysis", Information Sciences, Vol.48, pp. 398-422, February 2021.</li>
+
+<li>S Cherif, N Baklouti, H Hagras, AM Alimi, "Novel Intuitionistic Based Interval Type-2 Fuzzy Similarity Measures with Application to Clustering", IEEE Transactions on Fuzzy Systems, Vol. 30, No.5, pp. 1260-1271, February 2021.</li>
+
+<li>Y. Ghozzi, N Baklouti, H Hagras, AM Alimi, "Interval Type-2 Beta Fuzzy Near Sets Approach to Content-Based Image Retrieval", IEEE Transactions on Fuzzy Systems, Vol. 30, No.3, pp. 805-817, January 2021.</li>
+
+<li>H. Yusuf, H. Hagras, "High Payload Image Steganography Method Using Fuzzy Logic and Edge Detection", International Journal of Computer Science Trends and Technology, Vol.8, No.5, pp. 123-133, August 2020</li>
+
+<li>M. Alhassan, H Hagras, "A Congestion Control Approach Based on Weighted Random Early Detection and Type-2 Fuzzy Logic System", International Journal of Computer Science Trends and Technology, Vol.8, No.4, pp. 83-94, July 2020.</li>
+
+<li>SK Saeed, H Hagras, "A Big Bang–Big Crunch Type-2 Fuzzy Logic Based System for Fraud-Detection ", Journal of Engineering and Computer Science, Vol. 21, No.3, pp. 16-28, June 2020.</li>
+
+<li>H.Abdelgader, H.Hagras, "A Type 2 Fuzzy Logic Based System for Basal Metabolic Rate Prediction of Diabetes Patients", International Journal of Computer Science Trends and Technology, Vol.8, No.3, pp. 95-104, May 2020</li>
+
+<li>BE Chekol, H Hagras, "A Big-Bang Big-Crunch Type-2 Fuzzy Logic-based System for Malaria Epidemic Prediction in Ethiopia", Journal of Engineering and Computer Science, Vol. 21, No.2 pp. 64-74 , June 2020.</li>
+
+<li>A. Saleh, H. Hagras, "A Type-2 Fuzzy Logic Based System for Decision Support to Minimize Financial Default ", Journal of Engineering and Computer Science, Vol. 20, No.3 pp. 64-74 , December 2019.</li>
+
+<li>M Kiani, J Andreu, H Hagras et al, “Effective Brain Connectivity for fNIRS with Fuzzy Cognitive Maps in Neuroergonomics”, IEEE Transactions on Cognitive and Development, December 2019</li>
+
+<li>L Veryard, H Hagras, A Starkey, A Conway, G Owusu, "NNIR: N-Non-Intersecting-Routing Algorithm for Multi-Path Resilient Routing in Telecommunications Applications", International Journal of Computational Intelligence Systems, Vol. 13, No.1, 352-365, March 2020.</li>
+
+<li>J Mendel, R Chimatapu, H Hagras, "Comparing the Performance Potentials of Singleton and Non-singleton Type-1 and Interval Type-2 Fuzzy Systems in Terms of Sculpting the State Space", IEEE Transactions on Fuzzy Systems, Vol. 28, No.4, pp. 783-794, August 2019</li>
+
+<li>G. Ruiz, H. Hagras, H. Pomares, I. Rojas, “Towards a Fuzzy Logic System Based on General Forms of Interval Type-2 Fuzzy Sets”, IEEE Transactions on Fuzzy Systems, Vol. 27, No.12, pp. 2381-2396, February 2019.</li>
+
+<li>Y. Liu, R. Rodrıguez, H. Hagras, H. Liu, K. Qin, L. Martınez, "Type-2 fuzzy envelope of hesitant fuzzy linguistic term set: a new representation model of comparative linguistic expression", IEEE Transactions on Fuzzy Systems, Vol.27, No. 12, pp. 2312-2326, February 2019.</li>
+
+<li>H. Hagras, “Towards Human Understandable Explainable AI”, IEEE Computers, Vol.51, No.9, pp. 28-26, September 2018.</li>
+
+<li>Y. Jarraya, S. Bouaziz, H. Hagras, A. Alimi, “A Multi-Agent Architecture for the Design of Hierarchical Interval Type-2 Beta Fuzzy System” IEEE Transactions on Fuzzy Systems, Vol.27, No.6 pp. 1174-1188, September 2018.</li>
+
+<li>A. Starkey, H. Hagras, S.Shakya, G. Owusu “iPatch: A Many-Objective Type-2 Fuzzy Logic System for Field Workforce Optimisation” IEEE Transactions on Fuzzy Systems, Vol.27,N0.3, pp. 502-514, August 2018.</li>
+
+<li>A Pena-Rios, H Hagras, G Owusu, M Gardner, “ Furthering Service 4.0: Harnessing Intelligent Immersive Environments and Systems”, IEEE Magazine of Systems, Man and Cybernetics, Vol.4, No.1, pp.20-31, January 2018.</li>
+
+<li>A. Starkey, H Hagras, S Shakya, G Owusu, “ A Genetic Algorithm Based System for Simultaneous Optimisation of Workforce Skills and Teams”, KI-Künstliche Intelligenz, pp.1-16, January 2018</li>
+
+<li>A Sarabakha, N Imanberdiyev, E Kayacan, MA Khanesar, H Hagras, “Novel Levenberg–Marquardt based learning algorithm for unmanned aerial vehicles” Journal of Information Sciences, Vo.417. pp. 361-380, November 2017</li>
+
+<li>F Nadeem, D Alghazzawi, A Mashat, K Fakeeh, A Almalaise, H Hagras, “Modeling and predicting execution time of scientific workflows in the Grid using radial basis function neural network”, Journal of Cluster Computing, Vol. 20, No.3, pp.2805-2819, July 2017.</li>
+
+<li>J. Andreu-Perez, F.Cao, H. Hagras,G.Yang” A Self-Developing General Type-2 Fuzzy Inference System for the Online Brain Machine Interface of a Humanoid Robot using Phase Synchrony Features” IEEE Transactions on Fuzzy Systems, 2017</li>
+
+<li>L. De Miguel, H. Santos, M. Sesma-Sara, B. Bedregal, J. Aranzazu, H. Bustince, H. Hagras, “Type-2 Fuzzy Entropy-Sets” IEEE Transactions on Fuzzy Systems, 2016</li>
+
+<li>B. Yao, H. Hagras, D. Alghazzawi, M. Al haddad, “A Big Bang-Big Crunch Type-2 Fuzzy Logic System for Machine Vision-Based Event Detection and Summarization in Real-world Ambient Assisted Living” IEEE Transactions on Fuzzy Systems, 2016</li>
+
+<li>M. Antonelli, D. Bernardo, H. Hagras, F. Marcelloni, “Multi-Objective Evolutionary Optimization of Type-2 Fuzzy Rule-based Systems for Financial Data Classification” IEEE Transactions on Fuzzy Systems, 2016</li>
+
+<li>S. Wei, H. Hagras, D. Alghazzawi, “A cloud computing based Big-Bang Big-Crunch fuzzy logic multi classifier system for Soccer video scenes classification”, Journal of Memetic Computing, 2016.</li>
+
+<li>A Starkey, H Hagras, S Shakya, G Owusu, A Mohamed, D Alghazzawi, “A cloud computing based many objective type-2 fuzzy logic system for mobile field workforce area optimization” Journal of Memetic Computing, 2016.</li>
+
+<li>K Almohammadi, H Hagras, D Alghazzawi, G Aldabbagh, “A zSlices-based general type-2 fuzzy logic system for users-centric adaptive learning in large-scale e-learning platforms”, Journal of Soft Computing, 2016.</li>
+
+<li>G. Acampora, D. Alghazawi, H. Hagras, A. Vitiello, “An Interval Type-2 Fuzzy Logic Based Framework for Reputation Management in Peer to Peer e-Commerce” Journal of Information Sciences , Vol. 333, pp.88-107, 2016</li>
+
+<li>A. Starkey, H. Hagras, S. Shakya, G. Owusu, “A Multi-Objective Genetic Type-2 Fuzzy Logic Based System for Mobile Field Workforce Area Optimization” Journal of Information Sceinces, Vol. 333, pp. 390-411, September 2016.</li>
+
+<li>G. Ruiz, H. Hagras, I Rojas, H. Pomares, H. Bustince-Sola “Join and Meet operations for Type-2 Fuzzy Sets with Non-Convex Secondary Memberships”  IEEE Transactions on Fuzzy Systems, 2015.</li>
+
+<li>A. Bilgin, H.Hagras, J. Helvert, D. Alghazzawi “A Linear General Type-2 Fuzzy Logic Based Computing With Words Approach for Realising an Ambient Intelligent Platform for Cooking Recipes Recommendation” IEEE Transactions on Fuzzy Systems, Vol. 24, No.2, pp. 306-326, 2016.</li>
+
+<li>K. Almohammadi, H. Hagras, D.Alghazzawi, G. Aldabbagh, “Users-Centric Adaptive Learning System Based on Interval Type-2 Fuzzy Logic for Massively Crowded E-learning Platforms”, Journal of Artificial Intelligence and Soft Computing Research, January 2016</li>
+
+<li>A. Bilgin, H. Hagras, A. Ghelli, D. Alghazzawi, G.Aldabbagh, “An Ambient Intelligent and Energy Efficient Food Preparation System using Linear General Type-2 Fuzzy Logic based Computing With Words Framework” IEEE Computational Intelligence Magazine, November 2015.</li>
+
+<li>H. Sola, E. Barrenechea, M. Pagola, J. Fernandez, Z. Xu, B. Bedregal, J. Montero, H.Hagras, F. Herrera, B. De Baets, “A Historical Account of Types of Fuzzy Sets and their Relationships” IEEE Transactions on Fuzzy Systems, 2015.</li>
+
+<li>J. Sanz, D. Bernardo, F. Herrera, H. Bustince, H. Hagras, “A Compact Evolutionary Interval-Valued Fuzzy Rule-Based Classification System for the Modeling and Prediction of Real-World Financial Applications with Imbalanced Data” IEEE Transactions on Fuzzy Systems, Vol.23m No.4, pp.973- 990, August 2015.</li>
+
+<li>T. Kumbasar, H. Hagras, “A Self-Tuning zSlices based General Type-2 Fuzzy PI Controller”, IEEE Transactions on Fuzzy Systems, Vol.23, No.4, pp.991-1013, August 2015.</li>
+
+<li>J. Mendel, H. Hagras, H. Sola, F. Herrera, “Comments on: Interval Type-2 Fuzzy Sets are generalization of Interval-Valued Fuzzy Sets: Towards a Wider view on their relationship” IEEE Transactions on Fuzzy Systems, 2015.</li>
+
+<li>A.Ghelli, H. Hagras, G. Aldabbagh, “A Fuzzy Logic Based Retrofit System for Enabling Smart Energy Efficient Electric Cookers” IEEE Transactions on Fuzzy Systems, 2015.</li>
+
+<li>H.Bustince, J. Fernandez, H. Hagras, F. Herrera, M. Pagola, E. Barrenechea, “Interval Type-2 Fuzzy Sets are generalization of Interval-Valued Fuzzy Sets: Towards a Wider view on their relationship”, Vol.23, No.5, pp.1876-1882, IEEE Transactions on Fuzzy Systems, October 2015</li>
+
+<li>K. Almohammadi, H. Hagras, B. Yao, A. Alzahrani, D.Alghazzawi, G. Aldabbagh,” A Type-2 Fuzzy Logic Recommendation System for Adaptive Teaching” Journal of Soft Computing August 2015.</li>
+
+<li>T. Kumbasar, H. Hagras “Big Bang-Big Crunch Optimization based Interval Type-2 Fuzzy PID Cascade Controller Design Strategy “Journal of Information Sciences, pp. 277-295, October 2014</li>
+
+<li>H.Hagras, D. Alghazzawi, G. Aldabbagh “Employing Type-2 Fuzzy Logic Systems in the Efforts to Realize Ambient Intelligent Environments”, IEEE Computational Intelligence Magazine, pp.44-51, February 2015.</li>
+
+<li>S. Naim, H.Hagras, “A Type 2-Hesitation Fuzzy Logic based Multi-Criteria Group Decision Making System for Intelligent Shared Environments” International Journal of Soft Computing, Vol. 18, No. 7, pp. 1305-1319, 2014.</li>
+
+<li>M. Alhaddad, A. Mohamed, M. Kamel and H. Hagras, “A Genetic Interval Type-2 Fuzzy Logic-based Approach for Generating Interpretable Linguistic Models for the Brain P300 Phenomena Recorded via Brain Computer Interfaces", The International Journal of Soft Computing Journal, Vol.19, No. 4, pp. 1019- 1035, May 2014.</li>
+
+<li>B. Yao, H. Hagras, M. Alhaddad, D. Alghazawi “A fuzzy logic-based system for the automation of human behaviour recognition using machine vision in intelligent environments”, International Journal of Soft Computing, Vol. 19, No.2 , pp.499- 506, April 2014.</li>
+
+<li>T.Garcia-Valverde, A. Garcia-Sola, H.Hagras, J.Dooley, V. Callaghan, J. Botia, “A Fuzzy Logic Based System for Indoor Localisation using WiFi in Ambient Intelligent Environments”, IEEE Transactions on Fuzzy Systems, Vol. 21, No.4, pp. 702-718, August 2013</li>
+
+<li>A.Cara, C. Wagner, H. Hagras, I. Rojas, H. Pomares” Multi-objective Optimization and Comparison of Non-Singleton Type-1 and Singleton Interval Type-2 Fuzzy Logic Systems” IEEE Transactions on Fuzzy Systems, Vol. 21, No.3, pp. 459-476, June 2013.</li>
+
+<li>D. Bernardo, H. Hagras, E. Tsang, “A genetic type-2 fuzzy logic based system for the generation of summarised linguistic predictive models for financial applications”, International Journal of Soft Computing, Vo.17, No. 12, pp. 2185-2201, August 2013.</li>
+
+<li>A.Bilgin, H. Hagras, A. Malibari, M. Alhaddad, D. Alghazawi, “Towards a linear general type-2 fuzzy logic based approach for computing with words”, International Journal of Soft Computing,pp.2203-2222, May 2013.</li>
+
+<li>S. Naim, H. Hagras, “A Big-Bang Big-Crunch Optimized General Type-2 Fuzzy Logic Approach for Multi-Criteria Group Decision Making” International Journal of Artificial Intelligence and Soft Computing Research, Vol.3, No. 2, 2013.</li>
+
+<li>H. Hagras, C. Wagner, “Towards the Widespread Use of Type-2 Fuzzy Logic Systems in Real World Applications” IEEE Computational Intelligence Magazine, pp.14-24, August 2012.</li>
+
+<li>C. Lee, M. Wang, Y. Chen, H. Hagras, M. Wu, and O. Teytaud, "Genetic Fuzzy Markup Language for Game of NoGo," Journal of Knowledge-Based Systems, V. 34, pp.64-80, October 2012.</li>
+
+<li>C. Lee, H. Wang, H. Hagras, Z.W. Chen, S.T. Lan, S.E. Kuo, H.C. Kuo, H.H. Cheng, “  A Novel Genetic Fuzzy Markup Language and its Application to Healthy Diet Assessment,” International Journal of  UNCERTAINTY, FUZZINESS AND KNOWLEDGE-BASED SYSTEMS, VOL 20, NO 2, PP. 247-278, OCTOBER  2012.</li>
+
+<li>H. Hagras, C. Wagner, A. Kameas, C. Goumopoulos, A. Meliones, L. Seremeti, Y. Bellik, G. Pruvost, T. Heinroth, W. Minker, “Symbiotic Ecologies in Next Generation Ambient Intelligent Environments” International  Journal of Next-Generation Computing, Vol. 3, No. 1, 2012.</li>
+
+<li>C. Wagner, C. Goumopoulos, Hani Hagras, “Emerging and Adaptive Fuzzy Logic based Behaviours in Activity Sphere centred Ambient Ecologies”, Journal of Mobile and Pervasive Computing, Vol.8, No.4, po.500-521, August 2012.</li>
+
+<li>N. Sahab, H. Hagras, “Adaptive Non-singleton Type-2 Fuzzy Logic Systems: A Way Forward for Handling Numerical Uncertainties in Real World Applications”, International Journal of Computers, Communications and Control, Vol.5, No.3, pp.503-529, December 2011.</li>
+
+<li>C. Wagner, H. Hagras, “Towards General Type-2 Fuzzy Logic Systems based on zSlices”, IEEE Transactions on Fuzzy Systems, Vol.18, No.4 pp.637-660, August 2010.</li>
+
+<li>C. Lee, M. Wang, H. Hagras, “A Type-2 Fuzzy Ontology and its Application to Personal Diabetic Diet Recommendation”,  IEEE Transactions on Fuzzy Systems, Vol. 18, No.2, pp.374-395,  April 2010.</li>
+
+<li>C. Lee, M. Wang, G. Acampora, C. Hsu, H. Hagras “Diet Assessment Based on Type-2 Fuzzy Ontology and Fuzzy Markup Language” International Journal of Intelligent Systems, Vol. 25, pp.1187-1216, 2010.</li>
+
+<li>E Jammeh, M Fleury, C Wagner, H Hagras, M Ghanbari, “Interval Type-2 Fuzzy Logic Congestion Control for Video Streaming across IP Networks”, IEEE Transaction on Fuzzy Systems, pp.1123-1142, Vol. 17, No.5, October 2009.</li>
+
+<li>H. Duman, H. Hagras, V.Callaghan, “A Multi-Society based Intelligent Association Discovery and Selection for Ambient Intelligence Environments”, ACM Transactions on Autonomous and Adaptive Systems, Vol.5, No.2  pp.40-74 May 2010.</li>
+
+<li>J. Mendel, L.Zadeh, E. Trillas, R. Yager, J. Lawry, H.Hagras, S. Guadarrama, “What Computing With Words Means to Me”, IEEE Computational Intelligence Magazine, Vol.5, No.1, pp. 20-26, February  2010.</li>
+
+<li>C. Lee, M. Wang, G. Acampora, C. Hsu, and Hani Hagras, “ Type-2 Fuzzy Markup Language Based Ontology and Its Application to Diet Assessment” The International Journal of Intelligent Systems, Vol.25, No. 12, pp. 1187-1216, December 2010.</li>
+
+<li>F. Rivera-Illingworth, V. Callaghan, H. Hagras, "Detection of Normal and Novel Behaviours in Ubiquitous Domestic Environments", The Computer Journal, Vol.53, No.2, pp.142-151, February 2010.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P. Bull, “Large Scale Discovery in the Home: Finding Needles in a Haystack”, Journal of Information Technology Review, Vol. 1, No.3, pp. 115-126, September 2010.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P. Bull “Objects of Ambient Intelligence : The Entity Abstract Data Type”, Journal of Ambient Intelligence and Smart Environments</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P. Bull, “Resource Discovery in the Home Area Network”, International Journal of Information studies (IJIS). Vol.1, No.4, pp.251-262, October 2009.</li>
+
+<li>E. Tawil, H. Hagras, “An Adaptive Genetic-Based Incremental Architecture for the On-Line Coordination of Embedded Agents “, the International Journal of Cognitive Computation, Vo.4, No.1, pp. 300–326. August 2009.</li>
+
+<li>H. Hagras, C. Wagner, “Introduction to Interval Type-2 Fuzzy Logic Controllers -</li>
+
+<li>Towards Better Uncertainty Handling in Real World Applications”, The IEEE Systems, Man and Cybernetics eNewsletter, Issue 27, June 2009.</li>
+
+<li>C. Lynch, H. Hagras, “Developing Type-2 Fuzzy Logic Controllers for Handling the Uncertainties in Marine Diesel Engine Speed Control” Journal of Computational Intelligence Research, Volume, No. 4, pp.402-420, May 2009.</li>
+
+<li>H. Hagras, "Employing Computational Intelligence to Generate More Intelligent and Energy Efficient Living Spaces ", The International Journal of Automation and Computing, Volume 5, No. 1, pp. 1-9, January 2008.</li>
+
+<li>H. Duman, H. Hagras, V.Callaghan, “Intelligent Association Exploration and Exploitation of Fuzzy Agents in Ambient Intelligent Environments”, Journal of Unceratian Systems, Vol.2, No.2 pp.133-143, May 2008.</li>
+
+<li>A.López, D. Álvarez, F. Doctor, H. Hagras, V. Callaghan, “Data-Based Methods for the Off-Line Generation of Fuzzy Logic Controllers for an Intelligent Building Environment”, The International Journal of Ubiquitous Computing and Intelligence, Vol.1, No.2 pp.153-162, December  2007.</li>
+
+<li>H. Hagras, “Embedding Computational Intelligence in Pervasive Spaces”, IEEE Pervasive Computing, vol.6, no.3, pp. 85-89, May/June 2007.</li>
+
+<li>H. Duman, H. Hagras, V. Callaghan, “Intelligent Association Selection of Embedded Agents in Intelligent Inhabited Environments”, The International Journal of Pervasive and Mobile Computing, Vol. 3, No. 2, pp. 117-157, March 2007.</li>
+
+<li>H. Hagras, F. Doctor, A. Lopez, V.Callaghan, “An Incremental Adaptive Life Long Learning Approach for Type-2 Fuzzy Embedded Agents in Ambient Intelligent Environments” IEEE Transactions on Fuzzy Systems, Vol. 15, No.1, pp.41-55, February 2007.</li>
+
+<li>H. Hagras, “Type-2 FLCs: A new Generation of Fuzzy Controllers”, IEEE Computational Intelligence Magazine, Volume 2, Number 1, pages: 30-43, February 2007.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, “Ubiquitous Intelligence in Real Worlds”, Journal of Ubiquitous Computing and Intelligence, Vol.1, No.2 , pp.1-2, February 2007.</li>
+
+<li>H. Hagras, “Comments on Dynamical Optimal Training for Interval Type-2 Fuzzy Neural Network “ IEEE Transactions on Systems, Man and Cybernetics, Part B: Cybernetics,Vol. 36, No. 5, pp.1206-1209, October  2006.</li>
+
+<li>F. Doctor, H.Hagras, V. Callaghan, “A Type-2 Fuzzy Embedded Agent to Realise Ambient Intelligence in Ubiquitous Computing Environments”, Journal of Information Sciences, Vol. 171, No. 4, pp. 309-334, May 2005.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, “Intelligent Embedded Agents”, Journal of Information Sciences, pp. 289-292, May 2005</li>
+
+<li>F. Doctor, H.Hagras, V. Callaghan, “An Intelligent Fuzzy Agent Approach for Realising Ambient Intelligence in Intelligent Inhabited Environments”, IEEE Transactions on Systems, Man and Cybernetics, Part A: Systems and Humans, Vol.35, No.1, pp.55-65, January 2005.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, G. Clarke, A. Pounds-Cornish, H. Duman, “Creating an Ambient-Intelligence Environment Using Embedded Agents”, IEEE Intelligent Systems, Vol. 19, Issue 6, pp. 12-20, November/December 2004.</li>
+
+<li>H. Hagras, “A Hierarchical Type-2 Fuzzy Logic Control Architecture for Autonomous Mobile Robots”, IEEE Transactions on Fuzzy Systems, Vol. 12 No. 4, pp. 524-539, August 2004.</li>
+
+<li>V. Callaghan, G. Clarke, M. Colley, H. Hagras, J.S.Y. Chin, F. Doctor, “Emergent Behaviour in Intelligent Inhabited Environments”, The British Telecom Technology Journal, Vol. 22, No. 3, July 2004.</li>
+
+<li>H. Hagras, M. Colley, V. Callaghan, " Learning and Adaptation of an Intelligent Mobile Robot Navigator Operating in Unstructured Environment Based on a Novel Online Fuzzy-Genetic System" , Journal of Fuzzy Sets and Systems, Volume 141, No. 1, pp. 107-160, January  2004.</li>
+
+<li>M. Schlaf, H. Hagras, D. Sands, "Optimisation Strategies for Parametric Analysis of Thin Film Reflectivity Spectra", IEEE Transactions on Instrumentation and Measurements, Vol. 52, No. 5, pp.1635-1640, October 2003.</li>
+
+<li>H. Hagras, V. Callaghan, M.Colley, G. Clarke, "A Hierarchical Fuzzy Genetic Multi-Agent Architecture for Intelligent Buildings Learning, Adaptation and Control", Journal of Information Sciences, Vol. 150, pp. 33-54, March 2003.</li>
+
+<li>H. Hagras, M. Colley, V. Callaghan, M. Carr-West, "Online Learning and Adaptation of Autonomous Mobile Robots for Sustainable Agriculture", Journal of Autonomous Robots, Vol. 13, pp. 37-52, July 2002.</li>
+
+<li>H. Hagras, T. Sobh, "Intelligent Learning and Control of Autonomous Robotic Agents Operating in Unstructured Environments", Journal of Information Sciences, Vol. 145, Issue 1-2, pp.1-12, August 2002.</li>
+
+<li>H. Hagras, " Computational Intelligence Techniques applied to Co-operative Multi Robotics Systems", The International Journal of Robotics and Automation, Vol. 16, No. 4, pp. 151-154, December 2001</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, "Prototyping Design and Learning in Outdoor Mobile Robots operating in unstructured outdoor environments", IEEE Robotics and Automation Magazine, Vol. 8, No.3, pp.53-69, September 2001.</li>
+
+<li>H. Hagras, V. Callaghan V, M. Colley, M. Carr-West, "Autonomous Vehicles", Journal of Agricultural Engineering Institute, Vol. 55, No 2, pp.10-16, 2000</li>
+
+<li>H. Ying, H. Hagras, V. Callaghan, M. Colley, M. Carr-West , "Guidance of Agricultural Vehicles by Means of Fuzzy Logic Control", Transactions of the Society of Agricultural Machinery Vol. 31, No 3, 2000.</li>
+
+<li>H.Hagras, Victor Callaghan, M.Colley, "An Embedded-Agent Technique for Industrial Control Environments Where Process Modelling is Difficult", The International Journal of Assembly Automation, pp.323-331, November 1999.</li>
+   </ul>
+
+<h1>Authored Books</h1>
+<ul style="padding-left: 10px;">
+<li>J. Mendel, H. Hagras, W. Tan, H. Ying, W. Melek, “Introduction to Type-2 Fuzzy Logic Control: Theory and Applications”, Wiley-IEEE Press, August 2014.</li>
+</ul>
+<h1>Refereed Book Chapters</h1>
+
+<li>W. Song, H. Hagras, “A Hybrid Type-2 Fuzzy Based System for Football Scenes Classification within Recorded Video Sequences", Multimodal Analytics for Next-Generation Big Data Technologies and Applications, Springer, October 2018</li>
+
+<li>A. Bilgin, H. Hagras, C. Wagner, “Novel Approaches to Artefact Adaptation in Ambient Intelligent Environments” Next Generation Intelligent Environments, 165-219, Springer, 2016</li>
+
+<li>S. Naim, H. Hagras, “A Type-2 Fuzzy Logic Approach for Multi-Criteria Group Decision Making “ In the Book entitled Granular Computing and Decision-Making, Springer, June 2015.</li>
+
+<li>A. Bilgin, H. Hagras, C. Wagner, “Novel Approaches to Artefact Adaptation in Ambient Intelligent Environments” in the Book entitled “Next Generation Intelligent Environments” published by Springer, December 2015.</li>
+
+<li>T. Kumbasar, H. Hagras, “Interval Type-2 Fuzzy PID Controllers”, Handbook of Computational Intelligence, Eds: J. Kacprzyk, W. Pedryz, pp.285-294, published by Springer, September 2014.</li>
+
+<li>S. Shakya, S. Kassem, A. Mohamed, H. Hagras, G. Owusu “Enhancing Field Service Operations via Fuzzy Automation of Tactical Supply Plan”, in the book entitled “ Transforming Field and Service Operations” Published by Springer 2014.</li>
+
+<li>H. Hagras, “Introduction to Interval Type-2 Fuzzy Systems” in the book entitled “Computational Intelligence” published by UNESCO  Eolss, 2013.</li>
+
+<li>C. Lee, M. Wang, M. Su, M. Wu, H. Hagras ”A Type-2 FML-Based Meeting Scheduling Support System” in the book entitled A Type-2 FML-Based Fuzzy Ontology for Dietary Assessment, published by Springer Verlag, Germany, pp.169-187, 2013.</li>
+
+<li>C. Wagner, H. Hagras, “zSlices Based General Type-2 Fuzzy Sets and Systems” in the book entitled “Advances to Type-2 Fuzzy Logic Systems, Springer, August 2013</li>
+
+<li>M. Wang, C. Lee, H. Hagras, M. Su, Y. Tseng, H. Wang, Y.Wang, C. Liu “Applying FML-Based Fuzzy Ontology to University Assessment” in the book entitled A Type-2 FML-Based Fuzzy Ontology for Dietary Assessment, published by Springer Verlag, Germany, pp.133-147, 2013.</li>
+
+<li>H.Huang, G. Acampora, V. Loia, C. Lee, H. Hagras, M. Wang, H.Kao, J.ong Chang “Fuzzy Markup Language for Malware Behavioral Analysis” in the book entitled A Type-2 FML-Based Fuzzy Ontology for Dietary Assessment, published by Springer Verlag, Germany, pp.113-132, 2013.</li>
+
+<li>J. Dooley, H. Hagras, V. Callaghan, M. Henson, “The Tailored Fabric of Intelligent Environments” in the book entitled Internet of Things and Inter-cooperative Computational Technologies for Collective Intelligence, published by Springer Verlag, Germany, pp. 321-344, 2013.</li>
+
+<li>M. Wang, C. Lee, Z.Chen, H.Hagras, S.Kuo, H.Kuo, H.Cheng” A Type-2 FML-Based Fuzzy Ontology for Dietary Assessment” in the book entitled A Type-2 FML-Based Fuzzy Ontology for Dietary Assessment, published by Springer Verlag, Germany, pp.149-168, 2013</li>
+
+<li>H. Hagras, C. Wagner, “Artefact Adaptation in Ambient Intelligent Environments” in the book entitled Pervasive Adaptation, published by Springer Verlag, Germany, Eds, W. Minker, T. Heinroth, December 2011.</li>
+
+<li>H. Hagras, “Introduction to Type-2 Fuzzy Logic Controllers” in the book entitled “Intelligent Systems, Published by Taylor & Francis Group, Eds J. Irwin, May 2011.</li>
+
+<li>A. Hassanien, J. Abawajy, A.Abraham, H. Hagras, “ Advances in Intelligent Multimedia and Pervasive Computing”, in Series of Computer Communications and Networks- CCN published by Springer Verlag, Germany, September 2010.</li>
+
+<li>H. Hagras, W. Minker, M. Weber, A. Kameas, V. Callaghan, “ Advanced Intelligent Environments”, Springer, USA, June 2009.</li>
+
+<li>A. Kameas, C. Goumopoulos, H. Hagras, Victor Callaghan, T. Heinroth, M.Weber, “An Architecture that Supports Task-Centered Adaptation” in the book entitled Advanced Intelligent Environments”, Springer, USA, pp.41-69, June 2009</li>
+
+<li>H. Hagras, “Type-2 Fuzzy Logic Controllers: A Way Forward for Fuzzy Systems in Real World Environments”, The IEEE World Congress on Computational Intelligence (WCCI) 2008 Plenary/Invited Lectures, LNCS 5050, pp. 180–199, Springer-Verlag Berlin Heidelberg 2008.</li>
+
+<li>H. Duman, H. Hagras, V. Callaghan, “Adding Intelligence to Ubiquitous Computing Environments” in the Book entitled “Ubiquitous Computing and Environments” Studies in Computational Intelligence,  Ed. (Vincenzo Loia), Springer Verlag, pp. 61-102, December 2007.</li>
+
+<li>H. Hagras, “A Type-2 Fuzzy Logic Controller for Handling Uncertainties Facing Mobile Robots in Changing Unstructured Environments”, In the book entitled “Advanced Fuzzy Logic Technologies in Industrial Applications” (Eds: Y. Bai, H. Zhuang and D. Wang), Springer Verlag, Chapter 12, pp. 167-182, July 2006.</li>
+
+<li>V. Callaghan, M. Colley, H. Hagras, J. Chin, F. Doctor, G. Clarke, “Programming iSpaces: A Tale of Two Paradigms”, In the book entitled “Intelligent Spaces: The Application of Pervasive ICT”, (Eds: A. Steventon, S. Wright), Springer-Verlag, Chapter 24, pp.389- 421, December 2005.</li>
+
+<li>P. Remagnino, H. Hagras, N. Monekosso, S. Velastin, “AMBIENT INTELLIGENCE: A Gentle Introduction” In the book entitled “AMBIENT INTELLIGENCE A Novel Paradigm” (Eds: P. Remagnino, G. Foresti, T. Ellis), Springer Verlag, pp.1-15,  January 2005.</li>
+
+<li>E. Tawil, H. Hagras, “An Adaptive Multi Embedded-Agent Architecture for Intelligent Inhabited Environments”, In the book entitled ”Application and Science Soft Computing”, in the International Series “Advances in Soft Computing“,(Eds : A. Lotfi, J. Garibaldi), Springer Verlag, pp.271-279, June 2004.</li>
+
+<li>H. Hagras, V. Callaghan, G. Clarke, M. Colley, A. Pounds-Cornish, A. Holmes, H. Duman, "Incremental Synchronous Learning for Embedded-Agents Operating in Ubiquitous Computing Environments", In the book entitled “Soft Computing Agents: A New Perspective for Dynamic Information Systems”, in the International Series “Frontiers in Artificial Intelligence and Application”,  (Ed: V. Loia), IOS Press, pp.25-54, December 2002.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, G. Clarke, H. Duman, "Online Learning and Adaptation for Intelligent Embedded Agents Operating in Domestic Environments book " In the book entitled “Fusion of Soft Computing and Hard Computing for Autonomous Robotic Systems” (Eds: C.Zhou, D. Maravall and D. Ruan), in the International Series “Studies in Fuzziness and Soft Computing“ , Physica Verlag, Volume 116, pp. 293-323, November 2002.</li>
+
+<li>V. Callaghan, M. Colley, G. Clarke, H. Hagras, "A Soft-Computing based Distributed Artificial Intelligence Architecture for Intelligent Buildings", In the book entitled “Soft Computing agents: New Trends for Designing Autonomous Systems”, in the International Series "Studies in Fuzziness and Soft Computing“, (Eds: V. Loia, S.Sessa), Springer Verlag, Volume 75, pp. 117-145, 2002.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, " An Embedded-Agent Architecture for Online Learning & Control in Intelligent Machines" In the book entitled “New Frontiers in Computational Intelligence and its applications”, (Ed: M. Mohammadin), IOS Press, pp. 165-174, 2000.</li>
+</ul>
+
+<h1>Refereed Conference Papers</h1>
+<ul style="padding-left: 10px;">
+<li>K Maqsood, H Hagras, NR Zabet, "A Type-2 Fuzzy Logic-Based Explainable Artificial Intelligence for the Prediction of Enhancers", Proceedings of the 2024 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), Japan, August 2024.</li>
+
+<li>A Bhatia, H Hagras, "A Type-2 Fuzzy Time Series Classification System with Optimized Time Period Selection", Proceedings of the 2024 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), Japan, August 2024.</li>
+
+<li>H. Hagras, "Towards True Explainable Artificial Intelligence for Real World Applications", International Joint Conference on Computational Intelligence, pp.5-13, 2023.</li>
+
+<li>J. Fumanal-Idocin, H. Bustince, J. Andreu-Perez, H Hagras, "On the stability of Fuzzy Classifiers to Noise Induction", Proceedings of the 2023 IEEE International Conference on Fuzzy Systems, Incheon, South Korea, August 2023.</li>
+
+<li>J. Fumanal Idocin, H. Bustince, J. Andreu-Perez, H. Hagras. "Optimizing performance and resiliency against small perturbations in classification problems", Proceedings of the 13th Conference of the European Society for Fuzzy Logic and Technology, Palma, Spain, September 2023.</li>
+
+<li>P. Huidobroa, H. Hagras, J. Andreu-Perez, H. Bustincece, "Similarities for Interval Type-2 Fuzzy Sets", Proceedings of the 13th Conference of the European Society for Fuzzy Logic and Technology, Palma, Spain, September 2023.</li>
+
+<li>A Bhatia, H Hagras, "A Time Series Based Explainable Interval Type-2 Fuzzy Logic System", Proceedings of the 2022 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), Padua, Italy, July 2022</li>
+
+<li>H Leon-Garza, H Hagras, A Peña-Rios, A Conway, G Owusu, "An Interval Type-2 Fuzzy-based System to Create Building Information Management Models from 2D Floor Plan Images", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>J Rožman, H Hagras, J Andreu-Perez, D Clarke, B Müller, S Fitz, "A Type-2 Fuzzy Logic Based Explainable AI Approach for the Easy Calibration of AI models in IoT Environments", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>R Chimatapu, H Hagras, M Kern, G Owusu, "Enhanced Deep Type-2 Fuzzy Logic System For Global Interpretability", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>A Bhatia, H Hagras, "Identifying and Rectifying Rational Gaps in Fuzzy Rule Based Systems for Regression Problems", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>SJ Upasane, H Hagras, MH Anisi, S Savill, I Taylor, K Manousakis, "A Big Bang-Big Crunch Type-2 Fuzzy Logic System for Explainable Predictive Maintenance", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>L Beasley, H Hagras, A Conway, G Owusu, "A Type-2 Fuzzy Based Multi-Objective Optimisation for Strategic Network Planning in the Telecommunication Domain", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021</li>
+
+<li>H Leon-Garza, H Hagras, A Peña-Rios, A Conway, G Owusu, "A Fuzzy Rule-based System using a Patch-based Approach for Semantic Segmentation in Floor Plans", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>L Veryard, H Hagras, A Conway, G Owusu, "A Type-2 Fuzzy Multi-Objective Multi-Chromosomal Optimisation for Capacity Planning within Telecommunication Networks", Proceedings of the 2021 IEEE International Conference on Fuzzy Systems, Luxembourg, July 2021.</li>
+
+<li>KE Pule, MH Anisi, F Doctor, H Hagras, "Multiple UAV based Spatio-Temporal Task Assignment using Fast Elitist Multi Objective Evolutionary Approaches", Proceedings of the 2020 International Symposium on Networks, Computers and Communications, Montreal, Canada, October 2020.</li>
+
+<li>M Al-Zeyadi, J Andreu-Perez, H Hagras, C Royce, D Smith, P Rzonsowski, "Deep Learning Towards Intelligent Vehicle Fault Diagnosis, Proceedings of the 2020 International Joint Conference on Neural Networks (IJCNN), Glasgow, UK, July 2020.</li>
+
+<li>L Veryard, H Hagras, A Conway, G Owusu, "A Type-2 Fuzzy Genetic Approach to Uncertain & Dynamic Resilient Routing within Telecommunications Networks", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, Glasgow, UK, July 2020.</li>
+
+<li>H Leon-Garza, H Hagras, A Peña-Rios, A Conway, G Owusu, "A Big Bang-Big Crunch Type-2 Fuzzy Logic System for Explainable Semantic Segmentation of Trees in Satellite Images using HSV Color Space", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, J Glasgow, UK, uly 2020.</li>
+
+<li>J.Adams, H. Hagras, "A Type-2 Fuzzy Logic Approach to Explainable AI for regulatory compliance, fair customer outcomes and market stability in the Global Financial Sector", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, Glasgow, UK, July 2020.</li>
+
+<li>R Chimatapu, H Hagras, M Kern, G Owusu, "Hybrid Deep Learning Type-2 Fuzzy Logic Systems For Explainable AI", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, Glasgow, UK, July 2020.</li>
+
+<li>H Leon-Garza, H Hagras, A Peña-Rios, G Owusu, A Conway, "A Fuzzy Logic Based System for Cloud-based Building Information Modelling Rendering Optimization in Augmented Reality", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, Glasgow, UK, July 2020.</li>
+
+<li>J Rožman, H Hagras, JA Perez, D Clarke, B Müller, SF Data, "Privacy-Preserving Gesture Recognition with Explainable Type-2 Fuzzy Logic Based Systems", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, Glasgow, UK, July 2020.</li>
+
+<li>M Kiani, J Andreu-Perez, H Hagras, ML Filippetti, S Rigato, "A type-2 fuzzy logic based explainable artificial intelligence system for developmental neuroscience", Proceedings of the 2020 IEEE International Conference on Fuzzy Systems, Glasgow, UK, July 2020.</li>
+
+<li>A Peña-Rios, T Oplatek, H Hagras, A Conway, G Owusu, "Measuring Engagement in Virtual Reality for Talent Attraction Purposes" , Proceedings of the 2020  International Conference of the Immersive Learning Research Network, San Luis, USA, June 2020.</li>
+
+<li>M Kiani, J Andreu-Perez, H Hagras, AR Andreu, M Pinto, J Andreu, "Towards Gamers’ Experience Level Decoding with Optical Brain Imaging", Proceedings of the 2019 International Conference on Computer Science and Electronic Engineering , Colchester, UK, September 2019.</li>
+
+<li>E Ferreyra, H Hagras, M Kern, G Owusu, "Depicting Decision-Making: A Type-2 Fuzzy Logic Based Explainable Artificial Intelligence System for Goal-Driven Simulation in the Workforce Allocation Domain", Proceedings of the 2019 International Conference on Computer Science and Electronic Engineering , Colchester, UK, September 2019.</li>
+
+<li>L Veryard, H Hagras, A Starkey, G Owusu, "A fuzzy genetic system for resilient routing in uncertain & dynamic telecommunication networks", Proceedings of the 2019 International Conference on Computer Science and Electronic Engineering , Colchester, UK, September 2019.</li>
+
+<li>L Veryard, H Hagras, A Starkey, G Owusu,"A fuzzy genetic system for resilient routing in uncertain & dynamic telecommunication networks", Proceedings of 2019 IEEE International Conference on Fuzzy Systems, New Orleans, USA, July 2019.</li>
+
+<li>A. Steffens, A. Campello, J.Ravenscroft, A.Clark, H. Hagras,"Deep Segmentation: using Deep Convolutional Networks for Coral Reef pixel-wise Parsing". Proceedings of 2019 CLEF, August 2019</li>
+
+<li>E Ferreyra, H Hagras, M Kern, G Owusu,"Depicting Decision-Making: A Type-2 Fuzzy Logic Based Explainable Artificial Intelligence System for Goal-Driven Simulation in the Workforce Allocation Domain" , Proceedings of 2019 IEEE International Conference on Fuzzy Systems, New Orleans, USA, July 2019.</li>
+
+<li>R Chimatapu, H Hagras, A Starkey, G Owusu, "Explainable AI and Fuzzy Logic Systems", Proceedings of the 2018 International Conference on Theory and Practice of Natural Computing, pp.3-20, Dublin, Ireland, December 2018.</li>
+
+<li>A. Bhatia, J. Lepley, H. Hagras, "Machine Learning Approach to Extracting Emotions Information from Open Source Data for Relative Forecasting of Stock Prices" Proceedings of the 2018 International Computer Science and Electronic Engineering Conference, Colchester, UK, September 2018.</li>
+
+<li>L. Clift, L. Lepley, H. Hagras, A. Clark, “Autonomous computational intelligence-based behaviour recognition in security and surveillance”, Proceedings of the 2018 Spie Security + Defense, Berlin, Germany, October 2018.</li>
+
+<li>A. Pena Rios, H. Hagras, G. Owusu, M. Gardner “A Type-2 Fuzzy Logic Based System for Augmented Reality Visualisation of Georeferenced Data” Proceedings of the 2018 IEEE World Congress on Computational Intelligence, Rio De Janeiro, Brazil, July 2018</li>
+
+<li>H. Salih, H. Hagras, "Towards Image Steganography Using Type-2 Fuzzy Logic and Edge Detection" Proceedings of the 2018 International Computer Science and Electronic Engineering Conference, Colchester, UK, September 2018.</li>
+
+<li>R Chimatapu, H Hagras, A Starkey, G Owusu, "Enhancing Human Decision Making for Workforce Optimisation Using a Stacked Auto Encoder Based Hybrid Genetic Algorithm", Proceedings of the 2018 International Conference on Innovative Techniques and Applications of Artificial Intelligence, Cambridge, UK, December 2018.</li>
+
+<li>S. Khalil, H. Hagras, "Adaptive Type-2 Fuzzy Logic Based System for Fraud Detection in Financial Applications", Proceedings of the 2018 International Computer Science and Electronic Engineering Conference, Colchester, UK, September 2018.</li>
+
+<li>R. Chimatapu, H. Hagras, A. Starkey, G. Owusu” Interval Type-2 Fuzzy Logic Based Stacked Autoencoder Deep Neural Network For Generating Explainable AI Models in Workforce Optimization” Proceedings of the 2018 IEEE World Congress on Computational Intelligence, Rio De Janeiro, Brazil, July 2018</li>
+
+<li>A. Pena Rios, H. Hagras, G. Owusu, M. Gardner “A Type-2 Fuzzy Logic Based System for Augmented Reality Visualisation of Georeferenced Data” Proceedings of the 2018 IEEE World Congress on Computational Intelligence, Rio De Janeiro, Brazil, July 2018</li>
+
+<li>R. Chimatapu, H. Hagras, A. Starkey, G. Owusu, “A Big-Bang Big-Crunch Type-2 Fuzzy Logic System for Generating Interpretable Models in Workforce Optimization”, Proceedings of the 2018 IEEE World Congress on Computational Intelligence, Rio De Janeiro, Brazil, July 2018</li>
+
+<li>W Song, H Hagras, “A type-2 fuzzy logic system for event detection in soccer videos”, Proceedings of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+
+<li>A Peña-Rios, H Hagras, M Gardner, G Owusu, “A fuzzy logic based system for geolocated augmented reality field service support, Proceedings of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+
+<li>G Ruiz, H Pomares, I Rojas, H Hagras, “The non-singleton fuzzification operation for general forms of interval type-2 fuzzy logic systems”, Proceedings of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+
+<li>A Peña-Rios, H Hagras, M Gardner, G Owusu “ A type-2 Fuzzy Logic based System for asset geolocation within augmented reality environments”, Proceedings of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+
+<li>E Ferreyra, H Hagras, A Mohamed, G Owusu, “A type-2 fuzzy logic system for engineers estimation in the workforce allocation domain” Proceedings of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+
+<li>A Starkey, H Hagras, S Shakya, G Owusu, “Fuzzy dominance rules for real-world many objective optimization”, Proceedings of the 2017 IEEE International Conference on Fuzzy Systems, Naples, Italy, July 2017</li>
+
+<li>A. Starkey, H. Hagras, S. Shakya, G. Owusu, A Genetic Algorithm Based Approach for the Simultaneous Optimisation of Workforce Skill Sets and Team Allocation” Proceedings of the SGAI International Conference on Artificial Intelligence, Cambridge, December 2016.</li>
+
+<li>B Yao, J. Lepley, R. Peall, M. Butler, H. Hagras, “Recognition of complex human behaviours using 3D imaging for intelligent surveillance applications”, SPIE Security+ Defence, Edinburgh, UK, October 2016.</li>
+
+<li>B Yao, J. Lepley, R. Peall, M. Butler, H. Hagras An Evolutionary Optimization based Interval Type-2 Fuzzy Classification System for Human Behaviour Recognition and Summarisation”, Proceedings of the 2016 IEEE International Conference on Systems, Man and Cybernetics,  Budapest, Hungary, October 2016.</li>
+
+<li>A. Starkey, H. Hagras, S. Shakya, G. Owusu, “A Comparison of Particle Swarm Optimization and Genetic Algorithms for a Multi-Objective Type-2 Fuzzy Logic Based System for the Optimal Allocation of Mobile Field Engineers” Proceedings of the 2016 IEEE International Conference on Evolutionary Computation , Vancouver, Canada, July 2016.</li>
+
+<li>A. Pena-Rios, H. Hagras, G. Owusu, M. Gardner, “A Fuzzy Logic Based System for Mixed Reality Assistance of Remote Workforce”, Proceedings of the 2016 IEEE International Conference on Fuzzy Systems, Vancouver, Canada, July 2016.</li>
+
+<li>W. Song, H. Hagras “A Big-Bang Big-Crunch Type-2 Fuzzy Logic Based System for Soccer Video Scene Classification”, Proceedings of the 2016 IEEE International Conference on Fuzzy Systems, Vancouver, Canada, July 2016.</li>
+
+<li>G. Ruiz, H. Pomares, I. Rojas, H. Hagras, “Towards General Forms Of Interval Type-2 Fuzzy Logic Systems”, Proceedings of the 2016 IEEE International Conference on Fuzzy Systems, Vancouver, Canada, July 2016.</li>
+
+<li>A.Starkey, H. Hagras, S. Shakya, G. Owusu, “A Many-Objective Genetic Type-2 Fuzzy Logic System for the Optimal Allocation of Mobile Field Engineers”, Proceedings of the 2016 IEEE International Conference on Fuzzy Systems, Vancouver, Canada, July 2016.</li>
+
+<li>W. Song, H. Hagras “A Big-Bang Big-Crunch Fuzzy Logic Based System for Sports Video Scene Classification”, Proceedings of the 2016 IEEE International Conference on Fuzzy Systems, Vancouver, Canada, July 2016.</li>
+
+<li>A. Starkey, H. Hagras, S. Shakya, G. Owusu, “A Genetic Type-2 Fuzzy Logic Based Approach for the Optimal Allocation of Mobile Field Engineers to their Working Areas”, Proceedings of the 2015 IEEE International Conference on Fuzzy Systems, Istanbul, Turkey, August 2015.</li>
+
+<li>K. Almohammadi, B. Yao, A. Alzahrani, H. Hagras, D. Alghazawi, “An Interval Type-2 Fuzzy Logic Based System for Improved Instruction within Intelligent E-Learning Platforms”, Proceedings of the 2015 IEEE International Conference on Fuzzy Systems, Istanbul, Turkey, August 2015.</li>
+
+<li>A. Bilgin, H. Hagras, D. Alghazzawi, A. Malibari, M.Alhaddad, “Employing an Enhanced Interval Approach to Encode Words into Linear General Type-2 Fuzzy Sets for Computing With Words Applications ”, Proceedings of the 2015 IEEE International Conference on Fuzzy Systems, Istanbul, Turkey, August 2015.</li>
+
+<li>A.Starkey, H.Hagras, S.Shakya and G.Owusu, “A Genetic Algorithm Based Approach for the Optimisation of Workforce Skill Sets”, Proceedings of the SGAI International Conference on Artificial Intelligence, Cambridge, December 2015.</li>
+
+<li>M. Dodurka, A. Sakalli, A. Beke, I. Savran, A. Sahin, T. Kumbasar, E. Yesil, H. Hagras, “A New Online Self-Tuning Approach for Type-2 Fuzzy PID Controllers”, Proceedings of the 2015 Turkish National Conference on Automatic Control, Denizli, Turkey, September 2015.</li>
+
+<li>K. Almohammadi, B. Yao , H. Hagras “ An Interval Type-2 Fuzzy Logic Based System with User Engagement Feedback for Customized Knowledge Delivery within Intelligent E-Learning Platforms”, Proceedings of the 2014 IEEE International Conference on Fuzzy Systems, Beijing, China, July 2014.</li>
+
+<li>A. Sakalli, T. Kumbasar, E. Yesil, H. Hagras, “Analysis of the performances of type-1, self-tuning type-1 and interval type-2 fuzzy PID controllers on the Magnetic Levitation system”.   Proceedings of the 2014 IEEE International Conference on Fuzzy Systems, Beijing, China, July 2014.</li>
+
+<li>T. Kumbasar, C. Ozturk,E. Yesil,H. Hagras,” Performance evaluation of interval type-2 and online rule weighing based Type-1 Fuzzy PID controllers on a pH process”   Proceedings of the 2014 IEEE International Conference on Fuzzy Systems, Beijing, China, July 2014.</li>
+
+<li>A. Bilgin, H. Hagras, S. Upasane, A. Malibari, M.  Alhaddad, D. Alghazzawi,”An Adaptive Ambient Intelligent Platform for Recommending Recipes Using Computing with Words” proceedings of the  2014 International Conference on Intelligent Environments (IE), July 2014, Shanghai, China.</li>
+
+<li>A. Bilgin, H. Hagras, A. Malibari, M. Alhaddad, D. Alghazawi, “Computing With Words Framework for Ambient Intelligence” Proceedings of the 2013 IEEE International Conference on Systems, Man and Cybernetics, Manchester, UK, October 2013.</li>
+
+<li>T. Kumbasar and H. Hagras, “A Type-2 Fuzzy Cascade Control Architecture for Mobile Robots”, Proceedings of the 2013 IEEE International Conference on Systems, Man and Cybernetics, Manchester, UK, October 2013.</li>
+
+<li>K. Almohammadi and H. Hagras, “An Interval Type-2 Fuzzy Logic Based System for Customised Knowledge Delivery within Pervasive E-Learning Platforms", Proceedings of the 2013 IEEE International Conference on Systems, Man and Cybernetics, Manchester, UK, October 2013.</li>
+
+<li>B. Yao, H. Hagras, M. Alhaddad, D. Alghazawi, “A Big Bang-Big Crunch Optimization for a Type-2 Fuzzy Logic based Human Behaviour Recognition System in Intelligent Environments”, Proceedings of the 2013 IEEE International Conference on Systems, Man and Cybernetics, Manchester, UK, October 2013</li>
+
+<li>D. Bernardo, H. Hagras, E. Tsang, “A Genetic Type-2 Fuzzy Logic Based System for Financial Applications Modelling and Prediction” Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>A.Bilgin, H. Hagras, A. Malibari, M. Alhaddad, D. Alghazawi, “An Experience Based Linear General Type-2 Fuzzy Logic Approach for Computing With Words”, Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>B. Yao, H. Hagras, M. Alhaddad, D. Alghazawi, “A Type-2 Fuzzy Logic Machine Vision Based Approach for Human Behaviour Recognition in Intelligent Environments”, Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>A. Mohamed, H. Hagras, A. Liret, S. Shakya and G. Owusu “A Genetic Interval Type-2 Fuzzy Logic Based Approach for Operational Resource Planning”, Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>B. Bostanci, H. Hagras, J. Dooley “A Neuro Fuzzy Embedded Agent Approach Towards the Development of an Intelligent Refrigerator” Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>S. Naim and H. Hagras “A General Type-2 Fuzzy Logic Based Approach for Multi-Criteria Group Decision Making” Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>A. Ghelli, H. Hagras, J. Dooley, “Towards Realising an Intelligent and Energy Efficient Hob by Employing a Fuzzy Logic Based Embedded Agent Approach” Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013</li>
+
+<li>K. Almohammadi and H. Hagras, “A Type-2 Fuzzy Logic Machine Vision Based Approach for Human Behaviour Recognition in Intelligent Environments” Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>T. Kumbasar and H. Hagras, “A Type-2 Fuzzy Logic Machine Vision Based Approach for Human Behaviour Recognition in Intelligent Environments” Proceedings of the 2013 IEEE International Conference on Fuzzy Systems, Hyderabad, India, July 2013.</li>
+
+<li>S. Naim, H. Hagras, A. Bilgin, “Employing An Interval Type-2 Fuzzy Logic and Hesitation Index in a Multi Criteria Group Decision Making System for Lighting Level Selection in an Intelligent Enviornment”, Proceedings of the 2013 IEEE Symposium Series on Computational Intelligence, Singapore, April 2013.</li>
+
+<li>A. Mohamed, H. Hagras, S. Shakya, G. Owusu, “A fuzzy-genetic tactical resource planner for workforce allocation” Proceedings of the 2013 IEEE Symposium Series on Computational Intelligence, Singapore, pp.98-105, April 2013.</li>
+
+<li>Torrejon, Alfonso, V. Callaghan, H. Hagras, “Selectable Directional Audio for Multiple Telepresence in Immersive Intelligent Environments” Proceedings of the 2013 International Conference on Intelligent Environments, pp.181-187, Athens, Greece, July 2013.</li>
+
+<li>H. De Huang, C. Lee, H. Hagras, H. Kao, “TWMAN+: A Type-2 Fuzzy Ontology Model to Malware Behavior Analysis”, Proceedings of the 2012 IEEE International Conference on Systems, Man and Cybernetics, Seoul, Korea, October 2012.</li>
+
+<li>A. Bilgin, H.Hagras, A. Malibari, M. Alhaddad, D. Alghazzawi “A General Type-2 Fuzzy Logic Approach for Adaptive Modeling of Perceptions for Computing With Words” Proceedings of the 2012 UK Workshop for Computational Intelligence (UKCI 2012), Edinburgh, UK, September 2012.</li>
+
+<li>B. Yao, H.Hagras, M. Ghanbari,  M. Alhaddad, D. Alghazzawi, “A Type-2 Fuzzy Logic Approach for Detecting Human Related Events in Videos “Proceedings of the 2012 UK Workshop for Computational Intelligence (UKCI 2012), Edinburgh, UK, September 2012.</li>
+
+<li>D. Bernardo, H.Hagras, E. Tsang, “An Interval Type-2 Fuzzy Logic Based System for Model Generation and Summarization of Arbitrage Opportunities in Stock Markets” Proceedings of the 2012 UK Workshop for Computational Intelligence (UKCI 2012), Edinburgh, UK, September 2012.</li>
+
+<li>S. Naim, H. Hagras, J. Garibaldi, “A Fuzzy Logic Based Multi-Criteria Group Decision Making System for the Assessment of Umbilical Cord Acid-Base Balance” Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012.</li>
+
+<li>S. Naim, H. Hagras, “A Hybrid Approach for Multi-Criteria Group Decision Making  Based on Interval Type-2 Fuzzy Logic and Intuitionistic Fuzzy Evaluation”, Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012 .</li>
+
+<li>N. Sahab, H. Hagras, “Towards Comparing Adaptive Type-2 Input Based Non-Singleton Type-2 FLS and Non-Singleton FLSs Employing Gaussian Inputs” Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012 .</li>
+
+<li>A. Bilgin, J. Dooley, L. Whittington, H. Hagras, M. Henson, C. Wagner, A. Malibari, A. Al-Ghamdi, M. Alhaddad, D. Alghazzawi, “Dynamic Profile-Selection for zSlices Based Type-2 Fuzzy Agents Controlling Multi-User Ambient Intelligent Environments”, Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012.</li>
+
+<li>A. Bilgin, H. Hagras, A. Malibari, M. Alhaddad, D. Alghazzawi, “Towards A General Type-2 Fuzzy Logic Approach for Computing With Words Using Linear Adjectives”, Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012 .</li>
+
+<li>S. Kassem, H. Hagras, G. Owusu, S.Shakya, “A Type2 Fuzzy Logic System for Workforce Management in the Telecommunications Domain”, Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012.</li>
+
+<li>M. Ros Izquierdo, M. Delgado, A. Vila, H. Hagras, A. Bilgin, “A Fuzzy Logic Approach for Learning Daily Human Activities in an Ambient Intelligent Environment”, Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012 .</li>
+
+<li>T. Garcia-Valverde, A. Garcia-Sola, H. Hagras, J. Dooley, J. A. Botia, V. Callaghan, A. Gomez-Skarmeta, “An Adaptive Learning Fuzzy Logic System for Indoor Localisation using Wi-Fi in Ambient Intelligent Environments”, Proceedings of the 2012 IEEE International Conference on Fuzzy Systems, Brisbane, Australia, June 2012.</li>
+
+<li>A. Mohamed, H. Hagras, G. Owusu, H. Hagras, “Tactical Resource Planner for Workforce Allocation in Telecommunications”, Proceedings of the 2012 International Conference on Autonomous and Intelligent Systems, pp. 87-94, Aviero, Portugal, June 2012.</li>
+
+<li>Bob Yao, Hani Hagras, Danniyal Al Ghazzawi and Mohammed J. Alhaddad, "An Interval Type-2 Fuzzy Logic System for Human Silhouette Extraction in Dynamic Environments”, Proceedings of the 2012 International Conference on Autonomous and Intelligent Systems, pp. 126-134, Aviero, Portugal, June 2012.</li>
+
+<li>D. Bernardo, H. Hagras, E. Tsang” An Interval Type-2 Fuzzy Logic System for the Modeling and Prediction of Financial Applications, Proceedings of the 2012 International Conference on Autonmous and Intelligent Systems, pp. 95-105, Aviero, Portugal, June 2012.</li>
+
+<li>C. Wagner, H. Hagras, “Interpreting Fuzzy Set Operations and Multi Level Agreement in a Computing with Words Context” Proceedings of the 2011 IEEE International Conference on Fuzzy Systems, Taipei, Taiwan, pp.2139-2146, June 2011.</li>
+
+<li>C. S. Lee, Y. J. Chen, M. H. Wang, and H. Hagras, "Fuzzy markup language for game of NoGo," Proceedings of the 2011 IEEE International Conference on Granular Computing (IEEE Grc 2011), Kaohsiung, Taiwan, Nov. 8-11, 2011.</li>
+
+<li>J. Dooley, M. Henson, V. Callaghan, H. Hagras, “Formal Model For Space Based Ubiquitous Computing”, Proceedings of the 2011 International Conference on Intelligent Environments, Nottingham, UK, July 2011.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, M. Gardner “The Intelligent Classroom : Beyond Four Walls”, Proceedings of the 2011 International Conference on Intelligent Environments, Nottingham, UK, July 2011.</li>
+
+<li>N. Sahab, H.Hagras, “An Adaptive Type-2 Input Based Non-SingletonType-2 Fuzzy Logic System for Real World Applications” Proceedings of the 2011 IEEE International Conference on Fuzzy Systems, Taipei, Taiwan, pp.509-516, June 2011.</li>
+
+<li>S. Naim, H. Hagras, “ Type-2 Fuzzy Logic in Multi-Criteria Group Decision Making with Intuitionistic Evaluation”, Proceedings of the 2011 UK Workshop on Computational Intelligence, September 2011, Manchester , UK.</li>
+
+<li>S. Helal, J. Woong Lee, S. Hossain, E. Kim, H. Hagras, D. Cook “Persim – Simulator for Human Activities in Pervasive Spaces” Proceedings of the 2011 International Conference on Intelligent Environments, Nottingham, UK, July 2011.</li>
+
+<li>C. Wagner, H. Hagras, “Employing zSlices Based General Type-2 Fuzzy sets to model Multi Level Agreement” Proceedings of the 2011 IEEE International Symposium on Advances in Type-2 Fuzzy Logic Systems, Paris, France, pp.50-57, April 2011.</li>
+
+<li>A. Cara, C. Wagner, H. Hagras, I. Rojas, H. Pomares, “On Comparing Non-Singleton Type-1 and Singleton Type-2 Fuzzy Controllers for a Nonlinear Servo System” Proceedings of the 2011 IEEE International Symposium on Advances in Type-2 Fuzzy Logic Systems, Paris, France, pp.126-133, April 2011.</li>
+
+<li>M. AlMehdar, H. Hagras, “An Adaptive Type-2 Fuzzy Based Charging Technique for Market Design Agents in Uncertain Environments”, Proceedings of the 2011 IEEE International Symposium on Intelligent Agents, Paris, France, pp.1-8, April 2011.</li>
+
+<li>N. Sahab, H. Hagras, “A Type-2 Nonsingleton Type-2 Fuzzy Logic System to Handle Linguistic and Numerical Uncertainties in Real World Environments”, Proceedings of the 2011 IEEE International Symposium on Advances in Type-2 Fuzzy Logic Systems, Paris, France, pp. 110-117, April 2011.</li>
+
+<li>J. Dooley, Christian Wagner, Hani Hagras, Gaetan Pruvost, “FollowMe: The Persistent GUI” Proceedings of the 2011 International Symposium on Parallel Computing in Electrical Engineering, Bedforshire, UK, April 2011.</li>
+
+<li>M. Zaher, H. Hagras, “Data Generated Type-2 Fuzzy Logic Model for Control of Wind Turbines”, Proceedings of the 2010 International Conference on Intelligent Systems Design and Applications (ISDA 2010), Cairo, Egypt, December 2010.</li>
+
+<li>M. Ibrahim, A. Khairy, H. Hagras, and M. Zaher, “ Investigating the Power Fluctuation and Battery Storage Performance in Grid Integrated Wind Energy Converter Systems” Proceedings of the 2010, International Conference on Clean Energy, Famagusta, North Cyprus, September 2010.</li>
+
+<li>M. Ibrahim, A.Khairy, H.Hagras, M.Zaher, A.El Shafei, A.Shaltout, N.Abdel Rehim “Studying the Effect of Decentralized Battery Storage to Smooth the Generated Power of a Grid Integrated Wind Energy Conversion System”, Proceedings of the 2010 International Middle East Power Systems conference, Cairo, Egypt, December 2010.</li>
+
+<li>M. Azouz, A. Shaltout, A. Elshafei, N. Abdel-Rahim, H. Hagras, M. Zaher, M. Ibrahim” Fuzzy Logic Control of Wind Energy Systems” Proceedings of the 2010 International Middle East Power Systems conference, Cairo, Egypt, December 2010.</li>
+
+<li>N. Sahab, H. Hagras, “A hybrid approach to modeling input variables in non-singleton type-2 Fuzzy Logic Systems”, Proceedings of the 2010 UK Workshop on Computational Intelligence (UKCI 2010), Colchester, September 2010.</li>
+
+<li>C. Wagner, H. Hagras, “A collection operator for type-2 fuzzy logic systems” Proceedings of the 2010 UK Workshop on Computational Intelligence (UKCI 2010), Colchester, September 2010.</li>
+
+<li>C. Wagner, H. Hagras, “Uncertainty and Type-2 Fuzzy Sets and Systems”, Proceedings of the 2010 UK Workshop on Computational Intelligence (UKCI 2010), Colchester, September 2010.</li>
+
+<li>C. Wagner, H. Hagras, “Fuzzy Composite Concepts based on human reasoning” Proceedings of the 2010 IEEE International Conference on Information Reuse and Integration (IRI), pp. 308 – 313, Las Vegas, USA, August 2010.</li>
+
+<li>C. Wagner, H. Hagras, “Novel Methods for the Design of General Type-2 fuzzy Sets based on Device Characteristics and Linguistic Labels Surveys, Proceedings of the 2009 International Fuzzy Systems Association (IFSA 2009), pp.537-543, Lisbon, Portugal, July 2009.</li>
+
+<li>M. El Mehdar, H. Hagras, “An Intelligent Fuzzy Based System for Market Design Agents” Proceedings of the 2010 IEEE International Conference on Fuzzy Systems, Barcelona, Spain, July 2010.</li>
+
+<li>H. Hagras, R. Ramadan, M. Nawito, H. Gabr, M. Zaher, H. Fahmy, “A Fuzzy Based Hierarchical Coordination and Control System for a Robotic Agent Team in the Robot Hockey Competition” Proceedings of the 2010 IEEE International Conference on Fuzzy Systems, Barcelona, Spain, July 2010.</li>
+
+<li>M. Ibrahim, A. Khairy, H. Hagras, M. Zaher, “Using a Fuzzy Agent in Modeling Lead-Acid Battery Operating in Grid Connected Wind Energy Conversion Systems “Proceedings of the 2010 IEEE International Conference on Fuzzy Systems, Barcelona, Spain, July 2010.</li>
+
+<li>M. Zaher, H. Hagras, A. Khairy. M. Ibrahim, “A Type-2 Fuzzy Based Model for Renewable Wind Energy Generation” Proceedings of the 2010 IEEE International Conference on Fuzzy Systems, Barcelona, Spain, July 2010.</li>
+
+<li>A. Elfaham, H. Hagras, S. Helal, S. Hossain , J. Lee, D. Cook “A Fuzzy Based Verification Agent for an Ambient Intelligent Environment Event-Driven Simulator” Proceedings of the 2010 IEEE International Conference on Fuzzy Systems, Barcelona, Spain, July 2010.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P. Bull, “Simpleware Device Surrogates : Enabling high-level description & interaction with resource constrained devices”, Proceedings of the 2010 International Conference on Intelligent Environments (IE'10), Kuala Lumpur, pp. 203-208, July 2010.</li>
+
+<li>J. Dooley, M. Davies, M. Ball, V. Callaghan, H. Hagras, M. Colley, M. Gardner, “Decloaking Big Brother : Demonstrating Intelligent Environments”. Proceedings of the 2010 International Conference on Intelligent Environments (IE'10). pp.324-327, Kuala Lumpur, July 2010.</li>
+
+<li>R.Ramadan, H.Hagras, M. Nawito, A. El Faham, B. Eldesouky  ”The Intelligent Classroom: Towards an Educational Ambient Intelligence Test bed,” Proceedings of the 2010 International Conference on Intelligent Environments (IE'10). pp.344-349, Kuala Lumpur, July 2010.</li>
+
+<li>S. Hossain, A. Helal and H. Hagras “Persim – Pervasive System Simulation,” Proceedings of the 2010 International Conference on Pervasive Computing, (PERVASIVE 2010), Helsinki, Finland, May 2010.</li>
+
+<li>A.Kameas, H. Hagras, C. Goumopoulos, T. Heinroth, A. Meliones, M. Gardner, D. Economou, G. Pruvost, Y. Bellik, W. Minker, “Pervasive System Architecture that supports Adaptation using Agents and Ontologies”, Proceedings of the 10th International Symposium on Pervasive Systems, Algorithms, and Networks, pp. 148 – 153, Kaoshiung, Taiwan,  December 2009.</li>
+
+<li>Y. Bellik, A. Kameas, C. Goumopoulos, H. Hagras, T. Heinroth, G. Pruvost, A. Meliones, D. Economou, W. Minker and M. Gardner,”</li>
+
+<li>Multidimensional Pervasive Adaptation into Ambient Intelligent Environments”, Proceedings of the 2009 IEEE International Conference on Dependable, Autonomic and Secure Computing, Washington, DC, USA, pp. 303-308, December 2009</li>
+
+<li>C. Lee, M. Wang, C. Hsu, H. Hagras, “A Novel Type-2 Fuzzy Ontology and its Application to Diet Assessment”, Proceedings of the 2009 IEEE/WIC/ACM International Joint Conferences on Web Intelligence and Intelligent Agent Technologies, Milan, Italy, September 2009.</li>
+
+<li>C. Wagner, H. Hagras, “General Type-2 Fuzzy Logic Control based on zSlices”, Proceedings of the 2009 IEEE International Conference on Fuzzy Systems, Jeju Island, Korea, August 2009.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P.Bull , “Discovering the Home : Advanced Concepts”, Proceedings of the 2009 International Conference on the Applications of Digital Information and Web Technologies (ICADIWT 2009), London, August 2009.</li>
+
+<li>F. Doctor, H. Hagras, D. Roberts, V. Callaghan, “A Neuro-Fuzzy Based Agent for Group Decision Support in Applicant Ranking within Human Resources Systems”, Proceedings of the IEEE International Conference on Fuzzy Systems, Jeju Island, Korea, August 2009.</li>
+
+<li>C. Wagner, H. Hagras, “Novel Methods for the Design of General Type-2 fuzzy Sets based on Device Characteristics and Linguistic Labels Surveys” Proceedings of the 2009 International Fuzzy Systems Association (IFSA) Conference, Lisbon, July 2009.</li>
+
+<li>S. Mowafey. A. Schmitt, H. Hagras, W.Minker, “Creating an Ambient Intelligent Environment with an Emotion-Aware System”, Proceedings of the 2009 International Conference on Intelligent Environments, Barcelona, Spain, July 2009.</li>
+
+<li>A. ElFaham, H. Hagras, “A Speech Recognizer Based Intelligent Agent For Ambient Intelligent Environments”, Proceedings of the 2009 International Conference on Intelligent Environments, Barcelona, Spain, July 2009.</li>
+
+<li>B. El-Desouky, Hani Hagras, “An Adaptive Type-2 Fuzzy Logic Based Agent for Multi-Occupant Ambient Intelligent Environments”, Proceedings of the 2009 International Conference on Intelligent Environments, Barcelona, Spain, July 2009.</li>
+
+<li>Sarah Elkasrawy, Hani Hagras, Moustafa Nawito, “An Intelligent System for Extracting Intro and Outré Times in Songs Using Artificial Neural Networks”, Proceedings of the 2009 International Conference on Intelligent Environments, Barcelona, Spain, July 2009.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P.Bull, “Discovering the Home”, Proceedings of the 2009 International Conference on Intelligent Environments, Barcelona, Spain, July 2009.</li>
+
+<li>T.Heinroth,A.Kameas, H. Hagras and Y. Bellik,“</li>
+
+<li>Semi-tacit Adaptation of Intelligent Environments” Proceedings of the the 2009 IFIP Conference on Artificial Intelligence Applications & Innovations (AIAI 2009), pp.423-429, April 2009.</li>
+
+<li>F. Doctor, H. Hagras, D. Roberts. V. Callaghan, “A Fuzzy Based Agent for Group Decision Support of Applicants Ranking within Recruitment Systems”, Proceedings of the 2009 IEEE International Symposium on Intelligent Agents, Nashville, USA, April 2009.</li>
+
+<li>H. Hagras, “Developing a Type-2 FLC through Embedded Type-1 FLCs”, Proceedings of the 2008 IEEE International Conference on Fuzzy Systems, Hong Kong , pp.148-155, June 2008.</li>
+
+<li>C. Goumopoulos, A. Kameas, H. Hagras, V. Callaghan, W. Minker, M. Gardner, Y. Bellik, “ ATRACO: Adaptive and Trusted Ambient Ecologies”, Proceedings of the 2nd IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO 2008), Workshop on Pervasive Adaptation (PERADA), Venice, Italy, October 2008.</li>
+
+<li>H. Hagras, I. Packham, Y. Vanderstockt, N. Mcnulty, A. Vadher, F. Doctor, “An Intelligent Agent Based Approach for Energy Management in Commercial Buildings”, Proceedings of the 2008 IEEE International Conference on Fuzzy Systems, Hong Kong , pp.156-162, June 2008.</li>
+
+<li>C. Wagner, H. Hagras, “zSlices :Towards Bridging the Gap between Interval and General Type-2 Fuzzy Logic “, Proceeding of the 2008 IEEE International Conference on Fuzzy Systems, Hong Kong ,pp.489-497, June 2008.</li>
+
+<li>F. Doctor, H. Hagras, D. Roberts, V. Callaghan, “A Type-2 Fuzzy Based System for Handling the Uncertainties in Group Decisions for Ranking Job Applicants Within Human Resources Systems”, Proceedings of the 2008 IEEE International Conference on Fuzzy Systems, Hong Kong , pp.481-488, June 2008.</li>
+
+<li>E Jammeh, M Fleury, C Wagner, H Hagras, M Ghanbari, “Interval Type-2 Fuzzy Logic Congestion Control of Video Streaming”, Proceedings of the 2008 IET International Conference on Intelligent Environments (IE 08), Seattle, USA, pp.1-8, July 2008.</li>
+
+<li>C. Wagner, H. Hagras “ Employing Interpolation to enable the operation High Order Fuzzy Systems on Embedded Systems”, Proceedings of the 2008 UK International Conference on Computational Intelligence, Leicester, UK, September 2008.</li>
+
+<li>C. Wagner. H. Hagras, “A Genetic Algorithm Based Architecture for Evolving Type-2 Fuzzy Logic Controllers for Real World Autonomous Mobile Robots” Proceedings of the 2007 IEEE International Conference on Fuzzy Systems, London, UK, pp.193-198, July 2007.</li>
+
+<li>C. Wagner. H. Hagras, “Evolving Type-2 Fuzzy Logic Controllers for Autonomous Mobile Robots”, Proceedings of the 2007 International Fuzzy Systems Association Conference (IFSA 2007), Cancun, Mexico, June 2007.</li>
+
+<li>C. Lynch, H. Hagras, V. Callaghan, “Parallel Type-2 Fuzzy Logic Co-Processors for Engine Management” Proceedings of the 2007 IEEE International Conference on Fuzzy Systems, London, UK, pp. 907-912, July 2007</li>
+
+<li>H. Duman, H. Hagras, V. Callaghan, “A Fuzzy Based Architecture for Learning Relevant Embedded Agents Associations in Ambient Intelligent Environments” Proceedings of the 2007 IEEE International Conference on Fuzzy Systems, London, UK, pp. 559- 564, July 2007.</li>
+
+<li>V. Callaghan, J. Woods, S. Fitz, T. Dennis, H. Hagras, M. Colley, I.  Henning, “The Essex iDorm: A Testbed for Exploring Intelligent Energy Usage Technologies in the Home” Proceedings of the International Conference on Intelligent Green and Energy Efficient Building and Technologies, April 2008, Beijing, China.</li>
+
+<li>H. Hagras, A. Pounds-Cornish, M. Colley, V. Callaghan, G. DeSouza, “ A Collaborating Team of Spiking Neural Network Based Robotic Agents for Inaccessible Fluidic Environments” Proceedings of the IEEE International Conference on Systems, Man and Cybernetics, Taipei, Taiwan, pp. 4867-4872, October 2006.</li>
+
+<li>H. Hagras, F. Doctor, V. Callaghan, A. Lopez, “Evolving Type-2 Fuzzy Agents for Ambient Intelligent Environments” Proceedings of the International Symposium on Evolving Fuzzy Systems, Lake District, UK, pp. 208-213, September 2006.</li>
+
+<li>E. Tawil, H. Hagras, “An Adaptive Genetic-Based Architecture for the On-line Co ordination of Fuzzy Embedded Agents with Multiple Objectives and Constraints” Proceedings of the International Symposium on Evolving Fuzzy Systems, Lake District, UK, pp. 169- 175, September 2006.</li>
+
+<li>B. O’Flynn, H. Hagras, F. Murphy, J. Buckley, D. Laffey, J. Barton, A. Pounds-Cornish, M. Colley, “SOCIAL –Collaborative Agent Development”, Proceedings of the IEEE International Conference on Signals and Electronic Systems, Lodz, Poland, September 2006.</li>
+
+<li>F. Rivera-Illingworth, H. Hagras, V. Callaghan, “Automated Discovery of Human Activites inside Pervasive Living Spaces” Proceedings of the International Symposium on Pervasive Computing and Applications, Urumchi, Xinjiang, China, pp. 77-82 August 2006.</li>
+
+<li>C. Lynch, H. Hagras, V. Callaghan, “Using Uncertainty Bounds in the Design of an Embedded Real-Time Type-2 Neuro-Fuzzy Speed Controller for Marine Diesel Engines”, Proceedings of IEEE International Conference on Fuzzy Systems, Vancouver, Canada, pp. 1446 – 1453, July 2006.</li>
+
+<li>F. Doctor, H. Hagras, V. Callaghan, “Life Long Learning Approach for Type-2 Fuzzy Embedded Agents in Ambient Intelligent Environments”, Proceedings of IEEE International Conference on Fuzzy Systems, Vancouver, Canada, pp. 915 – 922, July 2006.</li>
+
+<li>C. Lynch. H. Hagras, V. Callaghan, “Embedded Interval Type-2 Neuro-Fuzzy Speed Controller for Marine Diesel Engines”, Proceedings of the International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems (IPMU 2006), pp. 1340-1347, Paris, France, July 2006.</li>
+
+<li>F. Rivera-Illingworth, H. Hagras, V. Callaghan “Towards the detection of temporal behavioural patterns in intelligent environments”, Proceedings of the 2nd IET International Conference on Intelligent Environments, Volume1, pp. 119-126, Athens, Greece, July 2006.</li>
+
+<li>J. Dooley, V. Callaghan, H. Hagras, P. Bull, D. Rohlfin “Ambient intelligence – processing and distribution in intelligent inhabited environments”, Proceedings of the 2nd IET International Conference on Intelligent Environments, Volume 2, pp. 51-60, Athens, Greece, pages: July 2006.</li>
+
+<li>P. Limb, H. Hagras, S. Armitage, J. Chin, R. Kalawsky, V. Callaghan, P. Bull, M.  Colley, “User Interaction in a Shared Information Space – a Pervasive Environment for the Home”, Proceedings of the International Workshop on Perspectives in Pervasive Computing, London, UK, October 2005.</li>
+
+<li>E.Tawil, H.Hagras, “Adaptive On-line Co-ordination of Constraint Ubiquitous Computing Devices with Multiple Objectives”, Proceedings of the IEE International Workshop on Intelligent Environments, pp. 116-125, Colchester, UK, June 2005.</li>
+
+<li>J. Chin, V. Callaghan, M. Colley, H. Hagras and G. Clarke, “Virtual Appliances for Pervasive Computing: A Deconstructionist, Ontology based, Programming-By-Example Approach”, Proceedings of the IEE International Workshop on Intelligent Environments, pp. 152-162, Colchester, UK, June 2005.</li>
+
+<li>A. López , F. Doctor, H. Hagras, V. Callaghan, D. Álvarez, “A Type-2-based Fuzzy Logic Control Architecture for Ambient Intelligent Environments”, Proceedings of the International Symposium on Ubiquitous Computing &  Ambient Intelligence (UCAmI'05), Granada, Spain, September 2005.</li>
+
+<li>F. Rivera-Illingworth, V. Callaghan and H. Hagras, “A Neural Network Agent Based Approach to Activity Detection in AmI Environments”, Proceedings of the IEE International Workshop on Intelligent Environments, pp. 92-100, Colchester, UK, June 2005.</li>
+
+<li>J Chin, V Callaghan, M Colley, H Hagras, G Clarke "End-User Programming in Pervasive Computing Environments", Proceedings of the International Conference on Pervasive Systems and Computing,(PSC-05),pp.187-192, Las Vegas, Nevada, USA, June 2005.</li>
+
+<li>López, D. Álvarez, F. Doctor, H. Hagras and V. Callaghan, “A Comparison of some Data-Based Methods for the Off-Line Generation of Fuzzy Logic Controllers for an Intelligent Building Environment”, Proceedings of the IEE International Workshop on Intelligent Environments, pp. 109-116, Colchester, UK, June 2005.</li>
+
+<li>J. Dooley, H. Hagras, V. Callaghan, “A Digital Knowledge Framework for Ambient Intelligence”, Proceedings of the IEE International Workshop on Intelligent Environments, Colchester, UK, June 2005.</li>
+
+<li>Lynch, H. Hagras, V. Callaghan, “Embedded Type-2 FLC for the Speed Control of Marine and Traction Diesel Engines”, Proceedings of the 2005 IEEE International Conference on Fuzzy Systems, pp.347-353, Reno, USA, May 2005.</li>
+
+<li>S. Bellis, K. Razeeb, C. Saha, K. Delaney, C. O'Mathuna, A. Pounds-Cornish, G. De Souza, M. Colley, H. Hagras, G. Clarke, V. Callaghan, C. Argyropoulos,G. Nikiforidis, “FPGA Implementation of Spiking Neural Networks  - an Initial Step towards Building Tangible Collaborative Autonomous Agents”, Proceedings of the  International Conference on Field-Programmable Technology, The University of Queensland, Brisbane, Australia, pp. 449-452, December, 2004.</li>
+
+<li>V. Callaghan, G. Clarke, H. Hagras, M. Colley, J. Chin, “Pervasive Computing and Urban Development: Issues for the individual and Society”, Proceedings of the International Research Foundation for Development (IRFD): UN-Habitat World Urban Forum, Barcelona, Spain, September 2004.</li>
+
+<li>Lopez, F. Doctor, L. Sanchez, H. Hagras, V. Callaghan, “An evolutionary algorithm for the off-line data driven generation of controllers for intelligent building”,  Proceedings of IEEE International Conference on Systems, Man and Cybernetics, pp.42-48, The Hague, Holland, October 2004.</li>
+
+<li>M. Colley, G, De Souza, H. Hagras, A. Pounds-Cornish, G. Clarke, V. Callaghan, “Towards Developing Micro-scale Robots For Inaccessible Fluidic Environments, Proceedings of IEEE International Conference on Systems, Man and Cybernetics, pp.5279-5285, The Hague, Holland, October 2004.</li>
+
+<li>E. Tawil, H. Hagras, “Adaptive Multi-Embedded Agent Coordination for Ubiquitous Computing Environments with Multiple Objectives and Constraints”, Proceedings of IEEE International Conference on Systems, Man and Cybernetics, pp.3402-3408, The Hague, Holland, October 2004.</li>
+
+<li>F. Rivera-Illingworth, V. Callaghan, H. Hagras, “A Neuro-Fuzzy Embedded Agent Based Approach for Abnormal Behaviour Detection in Intelligent Environments”, Proceedings of IEEE International Conference on Systems, Man and Cybernetics, pp.3565-3571, The Hague, Holland, October 2004.</li>
+
+<li>H. Hagras, “ A Type-2 Fuzzy Logic Controller for Mobile Robots”, Proceedings of the IEEE International Conference on Fuzzy Systems, pp. 965-970, Budapest, Hungary, July2004.</li>
+
+<li>F. Doctor, H. Hagras, V. Callaghan, “A Type-2 Fuzzy Embedded Agent For Ubiquitous Computing Environments”, Proceedings of the IEEE International Conference on Fuzzy Systems, pp. 1105-1110, Budapest, Hungary, July2004.</li>
+
+<li>F. Doctor, H. Hagras, V. Callaghan, A. Lopez, “An Adaptive Fuzzy Learning Mechanism for Intelligent Agents in Ubiquitous Computing Environments”, Proceedings of the 2004 World Automation Conference, Seville, Spain, July 2004.</li>
+
+<li>E. Tawil, H. Hagras, “A Genetic Based Multi Embedded-Agent Architecture for Intelligent Inhabited Environments”, Proceedings of the 2004 World Automation Conference, Seville, Spain, July 2004.</li>
+
+<li>H. Hagras, A. Pounds-Cornish, M.Colley, V.Callaghan, G. Clarke, “Evolving Spiking Neural Network Controllers for Autonomous Robots”, Proceedings of the 2004 IEEE International Conference on Robotics and Automation, pp. 4620- 4626, New Orleans, USA, April 2004.</li>
+
+<li>H. Duman, V. Callaghan, H. Hagras, M. Colley, G. Clarke,  Z. Bien, H. Lee, Y. Kim “A Multi-Agent Pervasive Computing Architecture For Geographically Dispersed Care Environments”, Proceedings of the 10th International Fuzzy Systems Association World Congress (IFSA 2003), Istanbul, Turkey 2003.</li>
+
+<li>H. Duman, V. Callaghan, H. Hagras, “Autonomous Self-Organization of Multi-Embedded Agents in Ambient Intelligence Environments” Proceedings of the IEEE International Conference in Systems, Man and Cybernetics, Washington, USA, October 2003.</li>
+
+<li>H. Duman, H. Hagras, V. Callaghan, G. Clarke and M. Colley, " Intelligent Association in Agent-based Ubiquitous Computing Environments", Proceedings of the 2002 International Conference on Control, Automation and Systems, Muju, Korea, 2002.</li>
+
+<li>H. Duman, H. Hagras, V. Callaghan, " A Soft-Computing based Approach to Intelligent Association in Agent-Based Ambient-Intelligence Environments", Proceedings of the 4th International Conference on Recent Advances on Soft Computing, pp. 387-393, Nottingham, UK, 2002.</li>
+
+<li>E. Tawil, H. Hagras, "A novel Multi Embedded-Agent Architecture for Mobile Robots Control", Proceedings of the 4th International Conference on Recent Advances on Soft Computing, Nottingham, UK, pp.7-13, 2002.</li>
+
+<li>H. Hagras, M. Colley, V. Callaghan, G. Clarke, H. Duman, A. Holmes, "A Fuzzy Incremental Synchronous Learning Technique for Embedded Agents Learning and Control in Intelligent Inhabited Environments", Proceedings of the 2002 IEEE International Conference on Fuzzy systems, pp. 139-145, Hawaii, USA, 2002.</li>
+
+<li>H. Hagras, M. Colley, V. Callaghan, "Life Long Learning and Adaptation for Embedded agents operating in unstructured Environments", Proceedings of the Joint 9th IFSA World Congress and 20th NAFIPS International Conference, Vancouver, Canada, pp.1547-1553, July 2001.</li>
+
+<li>V. Callaghan, M. Colley M, G. Clarke G, H. Hagras, "The Cognitive Disappearance of the Computer: Intelligent Artifacts and Embedded Agents", Proceedings of the i3 2001, workshop WS4 on Cognitive Versus Physical Disappearance, Porto, Portugal, April 2001</li>
+
+<li>V. Callaghan, G. Clarke, M. Colley and H. Hagras, " Embedding Intelligence: Research Issues for Ubiquitous Computing", Proceedings of the Ubiquitous Computing in Domestic Environments Conference, pp. 13-14, Nottingham, UK, September 2001.</li>
+
+<li>M. Colley, G. Clarke, H. Hagras, V. Callaghan, "Integrated Intelligent Environments: Cooperative Robotics & Buildings", Proceedings of the 32nd International Symposium on Robotics and Automation, pp. 745-750, Seoul, Korea, April 2001.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, G. Clarke, "A Hierarchical Fuzzy Genetic Multi-Agent Architecture for Intelligent Buildings Sensing and Control ", Proceedings of the International Conference on Recent Advances in Soft Computing 2000, pp. 199-206, Leicester, UK, June 2000.</li>
+
+<li>H.Hagras, V.Callaghan, M.Colley, " Learning and adaptation for flying robots", Proceedings of the third International Conference in non-linear problems in Aviation, Daytona beach, Florida, USA, May 2000.</li>
+
+<li>S. Lavington, H. Hagras, N. Dewhurst, " Predicting Video Packet losses across IP networks using Neural Networks", Proceedings of the third ICSC symposium on Neural Computation (NC 2000), pp.23-29, Berlin, Germany, May 2000.</li>
+
+<li>H.Hagras, V.Callaghan, M.Colley, "Learning Fuzzy Behaviour Co-ordination for Autonomous Multi-Agents Online using Genetic Algorithms & Real-Time Interaction with the Environment " Proceedings of the 2000 IEEE international conference on Fuzzy Systems, pp.853-859, San Antonio, USA, May 2000.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, "On Line Calibration of the sensors Fuzzy Membership Functions in Autonomous Mobile Robots" Proceedings of the 2000 IEEE international conference on Robotics and Automation, pp. 3233-3239, San Francisco, USA, April 2000.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, "Online Learning of Fuzzy Behaviours using Genetic Algorithms & Real-Time Interaction with the Environment", Proceedings of the 1999 IEEE International Conference on Fuzzy Systems, pp. 668-673, Seoul, Korea, August 1999.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, "Developing an Outdoor Fuzzy Logic Controlled Agricultural Vehicle for Crop Following and Harvesting", Proceedings of the Third International ICSC Symposium on Intelligent Industrial Automation, pp.168-173, Genova, Italy, June 1999.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, "A Fuzzy-Genetic Based Embedded-Agent Approach to Learning and Control in Agricultural Autonomous Vehicles", Proceedings of the1999 IEEE International Conference on Robotics and Automation, pp. 1005-1010, Detroit, U.S.A, May 1999.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, M. Carr-West, "A Behaviour based Hierarchical Fuzzy Control Architecture for Agricultural autonomous Mobile Robots", Proceedings of the International Conference on Computational Intelligence For Modelling, Control and Automation, pp. 166-171, Vienna, Austria, February 1999.</li>
+
+<li>H. Hagras, V. Callaghan, M. Colley, M .Carr-West, "Developing A Fuzzy Logic Controlled Agricultural Vehicle", Proceedings of third International Conference on Application of Fuzzy Systems and Soft Computing, pp. 9-16, Wiesbaden, Germany, October 1998.</li>
+
+<li>H. Hagras, M. Tayel, M. Rizk," A Fuzzy Logic Controller for a dry Rotary Cement Kiln Part-II", Proceedings of the Sixth International IEEE Conference on Fuzzy systems , pp. 1525-1532, Barcelona, Spain, July 1997.</li>
+
+<li>H. Hagras, M. Tayel, “Using a Neuro-Fuzzy System for Quality Assurance in Clinker Analysis”, Proceedings of the Industrial Control Conference , pp.126-136, Alexandria, Egypt, May 1997.</li>
+
+<li>H. Hagras, M. Tayel, M. Rizk, " Using Genetic Algorithms for Fuzzy Rule Generation for a Dry Rotary Cement Kiln", Proceedings of The 14th URSI Conference , pp.648-658, Cairo, Egypt, January 1997.</li>
+
+<li>H. Hagras, M. Tayel, “A Genetic Algorithm Based System for Optimisation of Cement Raw Mill Operation”, Proceedings of the International Conference on Computer Theory and Applications, pp. 20-29, Alexandria, Egypt, November 1996.</li>
+
+<li>H. Hagras, M. Tayel, M. Rizk, " A Fuzzy Logic Controller for a Dry Rotary Cement Kiln Part-I", Proceedings of the International Conference on material Engineering, pp. 151-160, Beirut, Lebanon, September 1996.</li>
+</ul>
+
+<h1>Standard Background</h1>
+<ul style="padding-left: 10px;">
+<li>J. Mendel, H. Hagras, R. John , “Standard Background Material About Interval Type-2 Fuzzy Logic Systems” Provided in the IEEE Computational Intelligence Society Standards Committee .  http://ieee-cis.org/standards/</li>
+</ul>
+
+<h1>Edited Books and Journal Special Issues</h1>
+<ul style="padding-left: 10px;">
+<li>R. John, H. Hagras, O. Castillo, “Type-2 Fuzzy Logic and Systems”, Springer, January 2018</li>
+
+<li>A. Hassanien, J. Abawajy, A.Abraham, H. Hagras, “ Advances in Intelligent Multimedia and Pervasive Computing”, in Series of Computer Communications and Networks- CCN published by Springer Verlag, ISBN: 978-1-84882-598-7, Germany, September 2010.</li>
+
+<li>Editor of the Proceedings of the 2009 IEEE Symposium on Intelligent Agents, Nashville, USA, April 2009.</li>
+
+<li>W. Minker, M. Weber, H. Hagras, A. Kameas, V. Callaghan, “ Advanced Intelligent Environments”, published by Springer, USA, ISBN: 978-0-387-76484-9, June 2009.</li>
+
+<li>D. Cook. H.Hagras, V. Callagha, S. Helal, “Advances of Intelligent Environments” Journal of Pervasive and Mobile Computing, December 2009.</li>
+
+<li>Editor of the Proceedings of the 2008 IET International Conference on Intelligent Environments, Seattle, USA, July 2008.</li>
+
+<li>Editor of the Proceedings of the 2007 IET International Conference on Intelligent Environments, Ulm, Germany, September 2007.</li>
+
+<li>Editor of the Proceedings of the 2006 IET International Conference on Intelligent Environments. July 2006.</li>
+
+<li>Editor of the Proceedings of the 2005 IEE International Workshop on Intelligent Environments. ISBN 0863415199, June 2005.</li>
+
+<li>Edited a Special Issue on “Intelligence in Real Worlds” Journal of Ubiquitous Computing and Intelligence, July 2006.</li>
+
+<li>Edited the Special Issue on “Intelligent Embedded Agents” in the Journal of Information Sciences, May 2005.</li>
+
+<li>Edited the Special Issue on “Intelligent Learning and Control of Robotics” in the Journal of Information Sciences, Vol. 140, Issue 3-4, May 2002.</li>
+
+<li>Edited the Special Issue on ”Computational Intelligence Techniques for Multi-robotics Systems” in the International Journal of Robotics and Automation, Vol. 16, No. 4, January 2001.</li>
+
+<li>IEEE Online Tutorials</li>
+
+<li>Invited to develop a tutorial entitled “Type-2 Fuzzy Logic Controllers: Towards a New Approach for Handling Uncertainties in Real World Environments” for the IEEE Expert Now Online Tutorials, January  2009.</li>
+</ul>
+
+</section>
+
+<section id="impact" style="background-image: linear-gradient(to top left,rgb(0, 255, 68),rgb(0, 213, 255));">
+    <br>
+    <h1>Impact</h1>
+<p>Due to the industrial and application relevance of my research, I have been involved in strong collaboration with industry. This industrial collaboration was in form of collaborative research projects, knowledge transfer and consultancies. This industrial collaboration is of great benefit as besides providing research funding, it also allows the development of courses that are of direct relevance to industry as well as providing industrial placements which will further enhance the skills of the University graduates. Furthermore, this industrial cooperation allows the dissemination of my research into real world products and services which can be useful and helpful to the community.
+    
+    <br> <br>
+<li><a href="https://results2021.ref.ac.uk/impact/b5e1ee0c-6387-46f3-9f93-00fc5bf5556c?page=1">I submitted an Impact case study for REF 2014 and REF 2021.</a> My impact cases summarised the great success of the knowledge exchange I performed with industry including British Telecom.</li>
+<br> <br>
+    <li>I have numerous Knowledge Transfer Partnership projects where the majority were graded as Outstanding by Innovate UK and some of them were award winning and all of them generated significant impact on the involved organization.</li>
+    <br> <br>
+    <h3>I have given advice to several UK government agencies including:</h3>
+    <br>
+    <ul style="padding-left: 10px;">
+    <li>The UK Government Cabinet Office</li>
+    <br>
+   <li> The Department of Health and Essex Social Services</li>
+    <br> <br>
+    <h3 style=" font-weight: bolder;">I had collaboration with the following industrial companies as follows:</h3>
+    <br>
+    <li>Chief Science Officer, Logicalglue Ltd.</li>
+    <br>
+    <li>HSBC bank, Performed a University based Consultancy with HSBC.</li>
+    <br>
+    <li>British Telecom (BT) within the scope of the several funded research projects and fellowships.</li>
+    <br>
+    <li>Leonardo (Selex) within the scope of the several funded research projects and fellowships.</li>
+    <br>
+    <li>MAN B&W which the largest diesel manufacturer in the world.</li>
+    <br>
+    <li>Lightwave Technologies Ltd, Nova UCD, Dublin, Ireland.</li>
+    <br>
+    <li>Sun Microsystems within the scope of research collaboration in the field of embedded hardware platform for the iSpace.</li>
+    <br>
+    <li>Intel within research cooperation within the iSpace and field trials.</li>
+    <br>
+   <li> LG Consumer Electronics which has collaborated with us within the scope of the project entitled “"A soft-computing based, multi-agent architecture with applications to intelligent building sensing and control".</li>
+    
+    </ul>
+    
+    
+
+
+</p>
+</section>
+
+<section id="students" style="background-image:linear-gradient(to bottom, rgb(76, 0, 255) 30%,rgb(0, 200, 255)) ;">
+<h1>Research Students Supervision</h1>
+
+<h2>previous PhD and Research students</h2>
+<ul style="padding-left: 10px;">
+<li>Dr. Faiyaz Doctor</li>
+
+<li>Dr. Christopher Lynch</li>
+
+<li>Dr. Christian Wagner</li>
+
+<li>Dr. Hakan Duman</li>
+
+<li>Dr. Elias Tawil</li>
+
+<li>Dr. Fernando Illing-Worth</li>
+
+<li>Dr. James Dooley</li>
+
+<li>Dr. Nazanin Sahab</li>
+
+<li>Dr. Nur Syibrah Muhamad Naim</li>
+
+<li>Dr. Ahmed Mohamed</li>
+
+<li>Dr. Dario Bernardo</li>
+
+<li>Dr. Aysenur Bilgin</li>
+
+<li>Dr Bo Yao</li>
+
+<li>Dr Khaled Al Mohammadi </li>
+
+<li>Dr Andrew Starkey</li>
+
+<li>Dr. Sherief Mowafey</li>
+
+<li>Dr Song Wei</li>
+
+<li>Dr Emmanuel Ferreyra </li>
+
+<li>Dr Ravikieran Chimatapu</li>
+
+<li>Dr Jareth Wolfe</li>
+
+<li>Dr Lewis Veryard </li>
+
+<li>Dr Mehrin Kiani</li>
+
+<li>Dr Liam Beasley</li>
+
+<li>Dr Hugo Leon-Garca</li>
+
+<li>Dr Hala Saleh</li>
+
+<li>Dr Ahmed Saleh</li>
+
+<li>Dr Belay Chekol</li>
+
+<li>Dr Heba Ahmed</li>
+
+<li>Dr Maha Salah</li>
+
+<li>Bahaa El Desoky </li>
+
+<li>Sarah El Kasrawy</li>
+
+<li>Mina Zaher</li>
+
+<li>Amr El Faham </li>
+
+<li>Mohamed El Mehdar </li>
+
+<li>Ahmed Abdelaziz </li>
+
+ <li>Summer Kassem</li>
+</ul>
+ <h2>I am currently supervising the following PhD and Research students </h2>
+ <li>Khizra Maqsood </li>
+
+ <li>Ashish Bhatia </li>
+ 
+ <li>Mahmoud Al Fayan</li>
+</section>
+<section style="background-image: linear-gradient(to bottom, rgb(195, 0, 255) 30%, rgb(0, 200, 255));">
+    
+</section>
+
+
+
+        <footer>
+        <p>Hani Hagras</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+    
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    
+ 
+
+ 
+
+
+</body>
+
+</html>
